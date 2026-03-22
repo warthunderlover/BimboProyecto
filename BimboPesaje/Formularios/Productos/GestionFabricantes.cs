@@ -24,7 +24,8 @@ namespace BimboPesaje.Formularios.Productos
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close(); 
+
         }
 
         private async Task CargarDatosDummy()
@@ -114,7 +115,8 @@ namespace BimboPesaje.Formularios.Productos
         private void FiltrarPorEstado(string estado)
         {
             var filasFiltradas = _tablaOriginal.AsEnumerable()
-     .Where(row => row["EstadoFabricante"].ToString() == estado);
+                                               .Where(row => row["EstadoFabricante"]
+                                               .ToString() == estado);
 
             dgvFabricante.DataSource = filasFiltradas.Any()
                 ? filasFiltradas.CopyToDataTable()

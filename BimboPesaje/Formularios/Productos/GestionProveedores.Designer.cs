@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             pnContenedorHijo = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             btnNuevo = new Button();
@@ -39,17 +39,6 @@
             btnSalir = new Button();
             pnDgv = new Panel();
             dgvProveedor = new DataGridView();
-            pnFiltros = new Panel();
-            label1 = new Label();
-            cmbPais = new ComboBox();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton3 = new RadioButton();
-            pnFiltro = new Panel();
-            btnLimpiar = new Button();
-            pnBuscar = new Panel();
-            txtBusqueda = new TextBox();
-            button1 = new Button();
             IdProveedor = new DataGridViewTextBoxColumn();
             RtnProveedor = new DataGridViewTextBoxColumn();
             NombreProveedor = new DataGridViewTextBoxColumn();
@@ -57,6 +46,17 @@
             CorreoProveedor = new DataGridViewTextBoxColumn();
             DireccionProveedor = new DataGridViewTextBoxColumn();
             EstadoProveedor = new DataGridViewTextBoxColumn();
+            pnFiltros = new Panel();
+            label1 = new Label();
+            cmbPais = new ComboBox();
+            rbHabilitados = new RadioButton();
+            rbDeshabilitados = new RadioButton();
+            rbTodos = new RadioButton();
+            pnFiltro = new Panel();
+            btnLimpiar = new Button();
+            pnBuscar = new Panel();
+            txtBusqueda = new TextBox();
+            button1 = new Button();
             pnContenedorHijo.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             pnDgv.SuspendLayout();
@@ -143,6 +143,7 @@
             btnSalir.TabIndex = 2;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
             // 
             // pnDgv
             // 
@@ -159,36 +160,36 @@
             dgvProveedor.AllowUserToDeleteRows = false;
             dgvProveedor.AllowUserToResizeColumns = false;
             dgvProveedor.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(220, 230, 241);
-            dataGridViewCellStyle1.Font = new Font("Itim", 12F);
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(31, 60, 136);
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            dgvProveedor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(220, 230, 241);
+            dataGridViewCellStyle5.Font = new Font("Itim", 12F);
+            dataGridViewCellStyle5.ForeColor = Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(31, 60, 136);
+            dataGridViewCellStyle5.SelectionForeColor = Color.White;
+            dgvProveedor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvProveedor.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             dgvProveedor.BackgroundColor = Color.White;
             dgvProveedor.BorderStyle = BorderStyle.None;
             dgvProveedor.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvProveedor.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(31, 60, 136);
-            dataGridViewCellStyle2.Font = new Font("Itim", 12F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(31, 60, 136);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvProveedor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(31, 60, 136);
+            dataGridViewCellStyle6.Font = new Font("Itim", 12F);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(31, 60, 136);
+            dataGridViewCellStyle6.SelectionForeColor = Color.White;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvProveedor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dgvProveedor.ColumnHeadersHeight = 36;
             dgvProveedor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvProveedor.Columns.AddRange(new DataGridViewColumn[] { IdProveedor, RtnProveedor, NombreProveedor, TelefonoProveedor, CorreoProveedor, DireccionProveedor, EstadoProveedor });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Itim", 12F);
-            dataGridViewCellStyle3.ForeColor = Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(31, 60, 136);
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvProveedor.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.White;
+            dataGridViewCellStyle7.Font = new Font("Itim", 12F);
+            dataGridViewCellStyle7.ForeColor = Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(31, 60, 136);
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            dgvProveedor.DefaultCellStyle = dataGridViewCellStyle7;
             dgvProveedor.Dock = DockStyle.Fill;
             dgvProveedor.EnableHeadersVisualStyles = false;
             dgvProveedor.GridColor = Color.White;
@@ -197,14 +198,14 @@
             dgvProveedor.Name = "dgvProveedor";
             dgvProveedor.ReadOnly = true;
             dgvProveedor.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(31, 60, 136);
-            dataGridViewCellStyle4.Font = new Font("Itim", 12F);
-            dataGridViewCellStyle4.ForeColor = Color.Transparent;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(31, 60, 136);
-            dataGridViewCellStyle4.SelectionForeColor = Color.Transparent;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvProveedor.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(31, 60, 136);
+            dataGridViewCellStyle8.Font = new Font("Itim", 12F);
+            dataGridViewCellStyle8.ForeColor = Color.Transparent;
+            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(31, 60, 136);
+            dataGridViewCellStyle8.SelectionForeColor = Color.Transparent;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dgvProveedor.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             dgvProveedor.RowHeadersWidth = 30;
             dgvProveedor.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgvProveedor.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -212,15 +213,83 @@
             dgvProveedor.TabIndex = 2;
             dgvProveedor.UseWaitCursor = true;
             // 
+            // IdProveedor
+            // 
+            IdProveedor.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            IdProveedor.DataPropertyName = "IdProveedor";
+            IdProveedor.HeaderText = "Id";
+            IdProveedor.MinimumWidth = 6;
+            IdProveedor.Name = "IdProveedor";
+            IdProveedor.ReadOnly = true;
+            IdProveedor.Width = 55;
+            // 
+            // RtnProveedor
+            // 
+            RtnProveedor.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            RtnProveedor.DataPropertyName = "RtnProveedor";
+            RtnProveedor.HeaderText = "RTN";
+            RtnProveedor.MinimumWidth = 6;
+            RtnProveedor.Name = "RtnProveedor";
+            RtnProveedor.ReadOnly = true;
+            RtnProveedor.Width = 74;
+            // 
+            // NombreProveedor
+            // 
+            NombreProveedor.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            NombreProveedor.DataPropertyName = "NombreProveedor";
+            NombreProveedor.HeaderText = "Proveedor";
+            NombreProveedor.MinimumWidth = 6;
+            NombreProveedor.Name = "NombreProveedor";
+            NombreProveedor.ReadOnly = true;
+            NombreProveedor.Width = 124;
+            // 
+            // TelefonoProveedor
+            // 
+            TelefonoProveedor.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            TelefonoProveedor.DataPropertyName = "TelefonoProveedor";
+            TelefonoProveedor.HeaderText = "Teléfono";
+            TelefonoProveedor.MinimumWidth = 6;
+            TelefonoProveedor.Name = "TelefonoProveedor";
+            TelefonoProveedor.ReadOnly = true;
+            TelefonoProveedor.Width = 111;
+            // 
+            // CorreoProveedor
+            // 
+            CorreoProveedor.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            CorreoProveedor.DataPropertyName = "CorreoProveedor";
+            CorreoProveedor.HeaderText = "Correo";
+            CorreoProveedor.MinimumWidth = 6;
+            CorreoProveedor.Name = "CorreoProveedor";
+            CorreoProveedor.ReadOnly = true;
+            CorreoProveedor.Width = 96;
+            // 
+            // DireccionProveedor
+            // 
+            DireccionProveedor.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            DireccionProveedor.DataPropertyName = "DireccionProveedor";
+            DireccionProveedor.HeaderText = "Pais";
+            DireccionProveedor.MinimumWidth = 6;
+            DireccionProveedor.Name = "DireccionProveedor";
+            DireccionProveedor.ReadOnly = true;
+            DireccionProveedor.Width = 71;
+            // 
+            // EstadoProveedor
+            // 
+            EstadoProveedor.HeaderText = "Estado";
+            EstadoProveedor.MinimumWidth = 6;
+            EstadoProveedor.Name = "EstadoProveedor";
+            EstadoProveedor.ReadOnly = true;
+            EstadoProveedor.Width = 125;
+            // 
             // pnFiltros
             // 
             pnFiltros.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pnFiltros.BackColor = Color.White;
             pnFiltros.Controls.Add(label1);
             pnFiltros.Controls.Add(cmbPais);
-            pnFiltros.Controls.Add(radioButton1);
-            pnFiltros.Controls.Add(radioButton2);
-            pnFiltros.Controls.Add(radioButton3);
+            pnFiltros.Controls.Add(rbHabilitados);
+            pnFiltros.Controls.Add(rbDeshabilitados);
+            pnFiltros.Controls.Add(rbTodos);
             pnFiltros.Location = new Point(23, 93);
             pnFiltros.Name = "pnFiltros";
             pnFiltros.Size = new Size(879, 39);
@@ -248,41 +317,43 @@
             cmbPais.Size = new Size(146, 28);
             cmbPais.TabIndex = 19;
             // 
-            // radioButton1
+            // rbHabilitados
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Font = new Font("Itim", 11F);
-            radioButton1.Location = new Point(4, 7);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(124, 27);
-            radioButton1.TabIndex = 9;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Habilitados";
-            radioButton1.UseVisualStyleBackColor = true;
+            rbHabilitados.AutoSize = true;
+            rbHabilitados.Checked = true;
+            rbHabilitados.Font = new Font("Itim", 11F);
+            rbHabilitados.Location = new Point(4, 7);
+            rbHabilitados.Name = "rbHabilitados";
+            rbHabilitados.Size = new Size(124, 27);
+            rbHabilitados.TabIndex = 9;
+            rbHabilitados.TabStop = true;
+            rbHabilitados.Text = "Habilitados";
+            rbHabilitados.UseVisualStyleBackColor = true;
+            rbHabilitados.CheckedChanged += radioButton1_CheckedChanged;
             // 
-            // radioButton2
+            // rbDeshabilitados
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Font = new Font("Itim", 11F);
-            radioButton2.Location = new Point(134, 7);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(149, 27);
-            radioButton2.TabIndex = 10;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Deshabilitados";
-            radioButton2.UseVisualStyleBackColor = true;
+            rbDeshabilitados.AutoSize = true;
+            rbDeshabilitados.Font = new Font("Itim", 11F);
+            rbDeshabilitados.Location = new Point(134, 7);
+            rbDeshabilitados.Name = "rbDeshabilitados";
+            rbDeshabilitados.Size = new Size(149, 27);
+            rbDeshabilitados.TabIndex = 10;
+            rbDeshabilitados.Text = "Deshabilitados";
+            rbDeshabilitados.UseVisualStyleBackColor = true;
+            rbDeshabilitados.CheckedChanged += rbDeshabilitados_CheckedChanged;
             // 
-            // radioButton3
+            // rbTodos
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.Font = new Font("Itim", 11F);
-            radioButton3.Location = new Point(289, 7);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(78, 27);
-            radioButton3.TabIndex = 11;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "Todos";
-            radioButton3.UseVisualStyleBackColor = true;
+            rbTodos.AutoSize = true;
+            rbTodos.Font = new Font("Itim", 11F);
+            rbTodos.Location = new Point(289, 7);
+            rbTodos.Name = "rbTodos";
+            rbTodos.Size = new Size(78, 27);
+            rbTodos.TabIndex = 11;
+            rbTodos.Text = "Todos";
+            rbTodos.UseVisualStyleBackColor = true;
+            rbTodos.CheckedChanged += rbTodos_CheckedChanged;
             // 
             // pnFiltro
             // 
@@ -354,74 +425,6 @@
             button1.TabIndex = 2;
             button1.UseVisualStyleBackColor = false;
             // 
-            // IdProveedor
-            // 
-            IdProveedor.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            IdProveedor.DataPropertyName = "IdProveedor";
-            IdProveedor.HeaderText = "Id";
-            IdProveedor.MinimumWidth = 6;
-            IdProveedor.Name = "IdProveedor";
-            IdProveedor.ReadOnly = true;
-            IdProveedor.Width = 55;
-            // 
-            // RtnProveedor
-            // 
-            RtnProveedor.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            RtnProveedor.DataPropertyName = "RtnProveedor";
-            RtnProveedor.HeaderText = "RTN";
-            RtnProveedor.MinimumWidth = 6;
-            RtnProveedor.Name = "RtnProveedor";
-            RtnProveedor.ReadOnly = true;
-            RtnProveedor.Width = 74;
-            // 
-            // NombreProveedor
-            // 
-            NombreProveedor.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            NombreProveedor.DataPropertyName = "NombreProveedor";
-            NombreProveedor.HeaderText = "Proveedor";
-            NombreProveedor.MinimumWidth = 6;
-            NombreProveedor.Name = "NombreProveedor";
-            NombreProveedor.ReadOnly = true;
-            NombreProveedor.Width = 124;
-            // 
-            // TelefonoProveedor
-            // 
-            TelefonoProveedor.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            TelefonoProveedor.DataPropertyName = "TelefonoProveedor";
-            TelefonoProveedor.HeaderText = "Teléfono";
-            TelefonoProveedor.MinimumWidth = 6;
-            TelefonoProveedor.Name = "TelefonoProveedor";
-            TelefonoProveedor.ReadOnly = true;
-            TelefonoProveedor.Width = 111;
-            // 
-            // CorreoProveedor
-            // 
-            CorreoProveedor.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            CorreoProveedor.DataPropertyName = "CorreoProveedor";
-            CorreoProveedor.HeaderText = "Correo";
-            CorreoProveedor.MinimumWidth = 6;
-            CorreoProveedor.Name = "CorreoProveedor";
-            CorreoProveedor.ReadOnly = true;
-            CorreoProveedor.Width = 96;
-            // 
-            // DireccionProveedor
-            // 
-            DireccionProveedor.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            DireccionProveedor.DataPropertyName = "DireccionProveedor";
-            DireccionProveedor.HeaderText = "Pais";
-            DireccionProveedor.MinimumWidth = 6;
-            DireccionProveedor.Name = "DireccionProveedor";
-            DireccionProveedor.ReadOnly = true;
-            DireccionProveedor.Width = 71;
-            // 
-            // EstadoProveedor
-            // 
-            EstadoProveedor.HeaderText = "Estado";
-            EstadoProveedor.MinimumWidth = 6;
-            EstadoProveedor.Name = "EstadoProveedor";
-            EstadoProveedor.ReadOnly = true;
-            EstadoProveedor.Width = 125;
-            // 
             // GestionProveedores
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -452,9 +455,9 @@
         private Panel pnFiltro;
         private Button btnLimpiar;
         private Panel pnFiltros;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
-        private RadioButton radioButton3;
+        private RadioButton rbHabilitados;
+        private RadioButton rbDeshabilitados;
+        private RadioButton rbTodos;
         private Label label4;
         private ComboBox comboBox4;
         private ComboBox comboBox5;

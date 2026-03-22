@@ -12,6 +12,7 @@ namespace BimboPesaje.Formularios.Productos
 {
     public partial class GestionProveedores : Form
     {
+        private DataTable _tablaOriginal;
         public GestionProveedores()
         {
             InitializeComponent();
@@ -69,8 +70,41 @@ namespace BimboPesaje.Formularios.Productos
 
             // Opcional: texto por defecto
             cmbPais.SelectedIndex = -1;
-            
+
         }
 
+        private void FiltrarPorEstado(string estado)
+        {
+            var filasFiltradas = _tablaOriginal.AsEnumerable()
+                                               .Where(row => row["EstadoFabricante"]
+                                               .ToString() == estado);
+
+            dgvProveedor.DataSource = filasFiltradas.Any()
+                ? filasFiltradas.CopyToDataTable()
+                : _tablaOriginal.Clone();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbHabilitados.Checked)
+                FiltrarPorEstado("Activo");
+        }
+
+        private void rbDeshabilitados_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbHabilitados.Checked)
+                FiltrarPorEstado("Inactivo");
+        }
+
+        private void rbTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbTodos.Checked)
+                dgvProveedor.DataSource = _tablaOriginal;
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

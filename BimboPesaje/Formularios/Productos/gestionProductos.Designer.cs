@@ -56,10 +56,12 @@
             dgvProductos = new DataGridView();
             Codigo = new DataGridViewTextBoxColumn();
             Producto = new DataGridViewTextBoxColumn();
+            MarcaProducto = new DataGridViewTextBoxColumn();
             Pais = new DataGridViewTextBoxColumn();
             Contenido = new DataGridViewTextBoxColumn();
             Presentacion = new DataGridViewTextBoxColumn();
             Proveedor = new DataGridViewTextBoxColumn();
+            EstadoProducto = new DataGridViewTextBoxColumn();
             pnContenedorHijo.SuspendLayout();
             pnBuscar.SuspendLayout();
             pnFiltro.SuspendLayout();
@@ -152,6 +154,7 @@
             btnLimpiar.TabIndex = 0;
             btnLimpiar.Text = "Limpiar Filtros";
             btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // pnFiltros
             // 
@@ -174,6 +177,7 @@
             // rbHabilitados
             // 
             rbHabilitados.AutoSize = true;
+            rbHabilitados.Checked = true;
             rbHabilitados.Font = new Font("Itim", 11F);
             rbHabilitados.Location = new Point(4, 7);
             rbHabilitados.Name = "rbHabilitados";
@@ -182,6 +186,7 @@
             rbHabilitados.TabStop = true;
             rbHabilitados.Text = "Habilitados";
             rbHabilitados.UseVisualStyleBackColor = true;
+            rbHabilitados.CheckedChanged += rbHabilitados_CheckedChanged;
             // 
             // rbDeshabilitados
             // 
@@ -191,9 +196,9 @@
             rbDeshabilitados.Name = "rbDeshabilitados";
             rbDeshabilitados.Size = new Size(149, 27);
             rbDeshabilitados.TabIndex = 10;
-            rbDeshabilitados.TabStop = true;
             rbDeshabilitados.Text = "Deshabilitados";
             rbDeshabilitados.UseVisualStyleBackColor = true;
+            rbDeshabilitados.CheckedChanged += rbDeshabilitados_CheckedChanged;
             // 
             // rbTodos
             // 
@@ -203,9 +208,9 @@
             rbTodos.Name = "rbTodos";
             rbTodos.Size = new Size(78, 27);
             rbTodos.TabIndex = 11;
-            rbTodos.TabStop = true;
             rbTodos.Text = "Todos";
             rbTodos.UseVisualStyleBackColor = true;
+            rbTodos.CheckedChanged += rbTodos_CheckedChanged;
             // 
             // label4
             // 
@@ -230,6 +235,7 @@
             cmbCategoria.Name = "cmbCategoria";
             cmbCategoria.Size = new Size(84, 30);
             cmbCategoria.TabIndex = 13;
+            cmbCategoria.SelectedIndexChanged += cmbCategoria_SelectedIndexChanged;
             // 
             // label5
             // 
@@ -253,6 +259,7 @@
             cmbMarca.Name = "cmbMarca";
             cmbMarca.Size = new Size(93, 30);
             cmbMarca.TabIndex = 15;
+            cmbMarca.SelectedIndexChanged += cmbProveedor_SelectedIndexChanged;
             // 
             // label6
             // 
@@ -276,6 +283,7 @@
             cmbPais.Name = "cmbPais";
             cmbPais.Size = new Size(97, 30);
             cmbPais.TabIndex = 17;
+            cmbPais.SelectedIndexChanged += cmbPaises_SelectedIndexChanged;
             // 
             // tableLayoutPanel1
             // 
@@ -378,7 +386,7 @@
             dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvProductos.ColumnHeadersHeight = 36;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvProductos.Columns.AddRange(new DataGridViewColumn[] { Codigo, Producto, Pais, Contenido, Presentacion, Proveedor });
+            dgvProductos.Columns.AddRange(new DataGridViewColumn[] { Codigo, Producto, MarcaProducto, Pais, Contenido, Presentacion, Proveedor, EstadoProducto });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Itim", 12F);
@@ -430,6 +438,15 @@
             Producto.ReadOnly = true;
             Producto.Width = 115;
             // 
+            // MarcaProducto
+            // 
+            MarcaProducto.DataPropertyName = "MarcaProducto";
+            MarcaProducto.HeaderText = "Marca";
+            MarcaProducto.MinimumWidth = 6;
+            MarcaProducto.Name = "MarcaProducto";
+            MarcaProducto.ReadOnly = true;
+            MarcaProducto.Width = 125;
+            // 
             // Pais
             // 
             Pais.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -469,6 +486,15 @@
             Proveedor.ReadOnly = true;
             Proveedor.Width = 124;
             // 
+            // EstadoProducto
+            // 
+            EstadoProducto.DataPropertyName = "EstadoProducto";
+            EstadoProducto.HeaderText = "Estado";
+            EstadoProducto.MinimumWidth = 6;
+            EstadoProducto.Name = "EstadoProducto";
+            EstadoProducto.ReadOnly = true;
+            EstadoProducto.Width = 125;
+            // 
             // GestionProductos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -496,12 +522,6 @@
         private Panel pnContenedorHijo;
         private Panel pnDgv;
         private DataGridView dgvProductos;
-        private DataGridViewTextBoxColumn Codigo;
-        private DataGridViewTextBoxColumn Producto;
-        private DataGridViewTextBoxColumn Pais;
-        private DataGridViewTextBoxColumn Contenido;
-        private DataGridViewTextBoxColumn Presentacion;
-        private DataGridViewTextBoxColumn Proveedor;
         private Button btnNuevo;
         private TableLayoutPanel tableLayoutPanel1;
         private Button btnEditar;
@@ -521,5 +541,13 @@
         private Panel pnBuscar;
         private TextBox txtBusqueda;
         private Button button1;
+        private DataGridViewTextBoxColumn Codigo;
+        private DataGridViewTextBoxColumn Producto;
+        private DataGridViewTextBoxColumn MarcaProducto;
+        private DataGridViewTextBoxColumn Pais;
+        private DataGridViewTextBoxColumn Contenido;
+        private DataGridViewTextBoxColumn Presentacion;
+        private DataGridViewTextBoxColumn Proveedor;
+        private DataGridViewTextBoxColumn EstadoProducto;
     }
 }
