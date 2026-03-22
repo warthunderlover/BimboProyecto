@@ -42,8 +42,6 @@
             rbHabilitados = new RadioButton();
             rbDeshabilitados = new RadioButton();
             rbTodos = new RadioButton();
-            label4 = new Label();
-            cmbCategoria = new ComboBox();
             label5 = new Label();
             cmbMarca = new ComboBox();
             label6 = new Label();
@@ -163,8 +161,6 @@
             pnFiltros.Controls.Add(rbHabilitados);
             pnFiltros.Controls.Add(rbDeshabilitados);
             pnFiltros.Controls.Add(rbTodos);
-            pnFiltros.Controls.Add(label4);
-            pnFiltros.Controls.Add(cmbCategoria);
             pnFiltros.Controls.Add(label5);
             pnFiltros.Controls.Add(cmbMarca);
             pnFiltros.Controls.Add(label6);
@@ -212,49 +208,24 @@
             rbTodos.UseVisualStyleBackColor = true;
             rbTodos.CheckedChanged += rbTodos_CheckedChanged;
             // 
-            // label4
-            // 
-            label4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label4.AutoSize = true;
-            label4.Font = new Font("Itim", 11F);
-            label4.Location = new Point(385, 7);
-            label4.Margin = new Padding(15, 3, 3, 3);
-            label4.Name = "label4";
-            label4.Padding = new Padding(0, 2, 0, 0);
-            label4.Size = new Size(90, 25);
-            label4.TabIndex = 12;
-            label4.Text = "Categoria";
-            // 
-            // cmbCategoria
-            // 
-            cmbCategoria.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            cmbCategoria.Font = new Font("Itim", 11F);
-            cmbCategoria.FormattingEnabled = true;
-            cmbCategoria.Location = new Point(478, 4);
-            cmbCategoria.Margin = new Padding(0, 0, 3, 0);
-            cmbCategoria.Name = "cmbCategoria";
-            cmbCategoria.Size = new Size(84, 30);
-            cmbCategoria.TabIndex = 13;
-            cmbCategoria.SelectedIndexChanged += cmbCategoria_SelectedIndexChanged;
-            // 
             // label5
             // 
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label5.AutoSize = true;
             label5.Font = new Font("Itim", 11F);
-            label5.Location = new Point(568, 7);
+            label5.Location = new Point(522, 7);
             label5.Margin = new Padding(3);
             label5.Name = "label5";
-            label5.Size = new Size(61, 23);
+            label5.Size = new Size(97, 23);
             label5.TabIndex = 14;
-            label5.Text = "Marca";
+            label5.Text = "Fabricante";
             // 
             // cmbMarca
             // 
             cmbMarca.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             cmbMarca.Font = new Font("Itim", 11F);
             cmbMarca.FormattingEnabled = true;
-            cmbMarca.Location = new Point(632, 4);
+            cmbMarca.Location = new Point(622, 4);
             cmbMarca.Margin = new Padding(0, 0, 3, 0);
             cmbMarca.Name = "cmbMarca";
             cmbMarca.Size = new Size(93, 30);
@@ -530,8 +501,6 @@
         private RadioButton rbHabilitados;
         private RadioButton rbDeshabilitados;
         private RadioButton rbTodos;
-        private Label label4;
-        private ComboBox cmbCategoria;
         private Label label5;
         private ComboBox cmbMarca;
         private Label label6;

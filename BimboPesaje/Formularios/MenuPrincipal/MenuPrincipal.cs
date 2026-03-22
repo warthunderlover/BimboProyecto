@@ -1,3 +1,4 @@
+using BimboPesaje.Formularios.Movimientos;
 using BimboPesaje.Formularios.Productos;
 
 namespace BimboPesaje
@@ -28,6 +29,7 @@ namespace BimboPesaje
         private async void MenuPrincipal_Load(object sender, EventArgs e)
         {
             this.AutoScaleMode = AutoScaleMode.Dpi;
+            lblHeader.Text = "Menú principal";
             await cerraSubmenu();
             //recibiendo los nombres de los botones para guardarlos en la variable
             foreach (Control ctrl in menuVertical.Controls)
@@ -43,13 +45,6 @@ namespace BimboPesaje
         #region uiHelpers
         protected async Task cerraSubmenu()
         {
-            pnPesajes.Visible = false;
-            pnProductos.Visible = false;
-            pnUsers.Visible = false;
-        }
-        protected async Task cerraSubmenuyMenu()
-        {
-            menuVertical.Width = MENU_COLAPSADO;
             pnPesajes.Visible = false;
             pnProductos.Visible = false;
             pnUsers.Visible = false;
@@ -267,6 +262,8 @@ namespace BimboPesaje
 
         private async void btnMovimientosEntradas_Click(object sender, EventArgs e)
         {
+            await abrirFormHijo(new MovimientosyEntradas());
+            lblHeader.Text = "Entradas y movimientos";
             await ColapsarMenu();
         }
         #endregion

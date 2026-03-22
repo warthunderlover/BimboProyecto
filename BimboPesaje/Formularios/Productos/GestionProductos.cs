@@ -82,20 +82,20 @@ namespace BimboPesaje.Formularios.Productos
             });
 
             // === CATEGORÍAS ===
-            cmbCategoria.Items.Clear();
-            cmbCategoria.Items.AddRange(new string[]
-            {
-                "Pan de Caja",
-                "Pan Dulce",
-                "Galletas",
-                "Pasteles y Tortas",
-                "Bollería",
-                "Barras y Snacks",
-                "Tortillas",
-                "Tostadas",
-                "Bagels y Muffins",
-                "Productos Sin Gluten"
-            });
+            //cmbCategoria.Items.Clear();
+            //cmbCategoria.Items.AddRange(new string[]
+            //{
+            //    "Pan de Caja",
+            //    "Pan Dulce",
+            //    "Galletas",
+            //    "Pasteles y Tortas",
+            //    "Bollería",
+            //    "Barras y Snacks",
+            //    "Tortillas",
+            //    "Tostadas",
+            //    "Bagels y Muffins",
+            //    "Productos Sin Gluten"
+            //});
 
             // === PROVEEDORES ===
             cmbMarca.Items.Clear();
@@ -115,7 +115,7 @@ namespace BimboPesaje.Formularios.Productos
 
             // Opcional: texto por defecto
             cmbPais.SelectedIndex = -1;
-            cmbCategoria.SelectedIndex = -1;
+            //cmbCategoria.SelectedIndex = -1;
             cmbMarca.SelectedIndex = -1;
         }
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
@@ -181,7 +181,7 @@ namespace BimboPesaje.Formularios.Productos
         {
             // Limpiar selecciones de los ComboBox
             cmbPais.SelectedIndex = -1;
-            cmbCategoria.SelectedIndex = -1;
+            //cmbCategoria.SelectedIndex = -1;
             cmbMarca.SelectedIndex = -1;
 
             // Limpiar radio buttons

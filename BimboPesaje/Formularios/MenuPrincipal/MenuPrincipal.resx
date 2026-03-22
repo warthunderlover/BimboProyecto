@@ -129,13 +129,10 @@
     <value>18, 19</value>
   </data>
   <data name="lblHeader.Size" type="System.Drawing.Size, System.Drawing">
-    <value>252, 44</value>
+    <value>0, 44</value>
   </data>
   <data name="lblHeader.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="lblHeader.Text" xml:space="preserve">
-    <value>Menu principal</value>
   </data>
   <data name="&gt;&gt;lblHeader.Name" xml:space="preserve">
     <value>lblHeader</value>
