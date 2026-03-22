@@ -148,7 +148,7 @@ namespace BimboPesaje.Formularios.Productos
         private void FiltrarPorEstado(string estado)
         {
             var filasFiltradas = _tablaOriginal.AsEnumerable()
-                                               .Where(row => row["Estado"]
+                                               .Where(row => row["EstadoProducto"]
                                                .ToString() == estado);
 
             dgvProductos.DataSource = filasFiltradas.Any()
@@ -198,7 +198,7 @@ namespace BimboPesaje.Formularios.Productos
         private void rbDeshabilitados_CheckedChanged(object sender, EventArgs e)
         {
             if (rbDeshabilitados.Checked)
-                FiltrarPorEstado("Inctivo");
+                FiltrarPorEstado("Inactivo");
         }
 
         private void rbTodos_CheckedChanged(object sender, EventArgs e)
