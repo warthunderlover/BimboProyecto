@@ -173,13 +173,11 @@
             // rbHabilitados
             // 
             rbHabilitados.AutoSize = true;
-            rbHabilitados.Checked = true;
             rbHabilitados.Font = new Font("Itim", 11F);
             rbHabilitados.Location = new Point(4, 7);
             rbHabilitados.Name = "rbHabilitados";
             rbHabilitados.Size = new Size(124, 27);
             rbHabilitados.TabIndex = 9;
-            rbHabilitados.TabStop = true;
             rbHabilitados.Text = "Habilitados";
             rbHabilitados.UseVisualStyleBackColor = true;
             rbHabilitados.CheckedChanged += rbHabilitados_CheckedChanged;
@@ -199,11 +197,13 @@
             // rbTodos
             // 
             rbTodos.AutoSize = true;
+            rbTodos.Checked = true;
             rbTodos.Font = new Font("Itim", 11F);
             rbTodos.Location = new Point(289, 7);
             rbTodos.Name = "rbTodos";
             rbTodos.Size = new Size(78, 27);
             rbTodos.TabIndex = 11;
+            rbTodos.TabStop = true;
             rbTodos.Text = "Todos";
             rbTodos.UseVisualStyleBackColor = true;
             rbTodos.CheckedChanged += rbTodos_CheckedChanged;
@@ -388,6 +388,7 @@
             dgvProductos.Size = new Size(890, 399);
             dgvProductos.TabIndex = 2;
             dgvProductos.UseWaitCursor = true;
+            dgvProductos.DoubleClick += dgvProductos_DoubleClick;
             // 
             // Codigo
             // 

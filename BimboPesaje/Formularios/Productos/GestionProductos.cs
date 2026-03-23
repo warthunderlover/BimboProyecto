@@ -13,6 +13,11 @@ namespace BimboPesaje.Formularios.Productos
     public partial class GestionProductos : Form
     {
         private DataTable _tablaOriginal;
+        // Propiedades públicas con los datos del producto seleccionado
+        public string CodigoSeleccionado { get; private set; }
+        public string ProductoSeleccionado { get; private set; }
+        public string ProveedorSeleccionado { get; private set; }
+        public string EstadoSeleccionado { get; private set; }
         public GestionProductos()
         {
             InitializeComponent();
@@ -22,6 +27,7 @@ namespace BimboPesaje.Formularios.Productos
         {
             await CargarDatosDummy();
             await CargarComboBoxes();
+            rbHabilitados.Checked = true;
         }
 
         private async Task CargarDatosDummy()
@@ -128,7 +134,18 @@ namespace BimboPesaje.Formularios.Productos
             this.Close();
         }
 
-        
+        private void dgvProductos_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvProductos.SelectedRows.Count == 0) return;
+
+            CodigoSeleccionado = dgvProductos.SelectedRows[0].Cells["Codigo"].Value?.ToString();
+            ProductoSeleccionado = dgvProductos.SelectedRows[0].Cells["Producto"].Value?.ToString();
+            ProveedorSeleccionado = dgvProductos.SelectedRows[0].Cells["Proveedor"].Value?.ToString();
+            //EstadoSeleccionado = dgvProductos.SelectedRows[0].Cells["EstadoProducto"].Value?.ToString();
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
 
         private void cmbPaises_SelectedIndexChanged(object sender, EventArgs e)
         {

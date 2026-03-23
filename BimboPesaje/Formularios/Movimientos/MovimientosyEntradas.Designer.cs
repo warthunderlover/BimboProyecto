@@ -49,10 +49,10 @@
             btnAgregarMovimiento = new Button();
             label1 = new Label();
             dgvMateriaPrima = new DataGridView();
-            CodigoInternoProducto = new DataGridViewTextBoxColumn();
-            NombreProducto = new DataGridViewTextBoxColumn();
+            CodigoInterno = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
             ProveedorProducto = new DataGridViewTextBoxColumn();
-            EstadoProceso = new DataGridViewTextBoxColumn();
+            Estado = new DataGridViewTextBoxColumn();
             pnVehiculo = new Panel();
             pnBotones = new Panel();
             button4 = new Button();
@@ -69,10 +69,6 @@
             btnGuardarEntrada = new Button();
             btnEditarEntrada = new Button();
             dgvEntradas = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             label3 = new Label();
             pnMovimiento.SuspendLayout();
             pnBotonesMovimiento.SuspendLayout();
@@ -125,6 +121,7 @@
             btnGuardarMovimiento.TabIndex = 4;
             btnGuardarMovimiento.Text = "Guardar";
             btnGuardarMovimiento.UseVisualStyleBackColor = false;
+            btnGuardarMovimiento.Click += btnGuardarMovimiento_Click;
             // 
             // btnQuitarMovimiento
             // 
@@ -168,6 +165,7 @@
             btnPesar.TabIndex = 1;
             btnPesar.Text = "Pesar";
             btnPesar.UseVisualStyleBackColor = false;
+            btnPesar.Click += btnPesar_Click;
             // 
             // btnAgregarMovimiento
             // 
@@ -182,6 +180,7 @@
             btnAgregarMovimiento.TabIndex = 0;
             btnAgregarMovimiento.Text = "Agregar";
             btnAgregarMovimiento.UseVisualStyleBackColor = false;
+            btnAgregarMovimiento.Click += btnAgregarMovimiento_Click;
             // 
             // label1
             // 
@@ -198,9 +197,9 @@
             // 
             dgvMateriaPrima.AllowUserToAddRows = false;
             dgvMateriaPrima.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(79, 129, 189);
+            dataGridViewCellStyle1.BackColor = Color.White;
             dataGridViewCellStyle1.Font = new Font("Itim", 12F);
-            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.ForeColor = Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(90, 226, 138);
             dataGridViewCellStyle1.SelectionForeColor = Color.Black;
             dgvMateriaPrima.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -219,18 +218,19 @@
             dgvMateriaPrima.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvMateriaPrima.ColumnHeadersHeight = 40;
             dgvMateriaPrima.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvMateriaPrima.Columns.AddRange(new DataGridViewColumn[] { CodigoInternoProducto, NombreProducto, ProveedorProducto, EstadoProceso });
+            dgvMateriaPrima.Columns.AddRange(new DataGridViewColumn[] { CodigoInterno, Nombre, ProveedorProducto, Estado });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = SystemColors.Window;
             dataGridViewCellStyle3.Font = new Font("Itim", 12F);
             dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(79, 125, 209);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(90, 226, 138);
             dataGridViewCellStyle3.SelectionForeColor = Color.White;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvMateriaPrima.DefaultCellStyle = dataGridViewCellStyle3;
             dgvMateriaPrima.EnableHeadersVisualStyles = false;
             dgvMateriaPrima.GridColor = Color.White;
             dgvMateriaPrima.Location = new Point(17, 39);
+            dgvMateriaPrima.MultiSelect = false;
             dgvMateriaPrima.Name = "dgvMateriaPrima";
             dgvMateriaPrima.ReadOnly = true;
             dgvMateriaPrima.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -244,46 +244,48 @@
             dgvMateriaPrima.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvMateriaPrima.RowHeadersVisible = false;
             dgvMateriaPrima.RowHeadersWidth = 51;
+            dgvMateriaPrima.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvMateriaPrima.Size = new Size(444, 206);
             dgvMateriaPrima.TabIndex = 1;
             // 
-            // CodigoInternoProducto
+            // CodigoInterno
             // 
-            CodigoInternoProducto.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            CodigoInternoProducto.DataPropertyName = "CodigoInternoProducto";
-            CodigoInternoProducto.HeaderText = "Código";
-            CodigoInternoProducto.MinimumWidth = 6;
-            CodigoInternoProducto.Name = "CodigoInternoProducto";
-            CodigoInternoProducto.ReadOnly = true;
-            CodigoInternoProducto.Width = 96;
+            CodigoInterno.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            CodigoInterno.DataPropertyName = "CodigoInternoProducto";
+            CodigoInterno.HeaderText = "Código";
+            CodigoInterno.MinimumWidth = 6;
+            CodigoInterno.Name = "CodigoInterno";
+            CodigoInterno.ReadOnly = true;
+            CodigoInterno.Width = 96;
             // 
-            // NombreProducto
+            // Nombre
             // 
-            NombreProducto.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            NombreProducto.DataPropertyName = "NombreProducto";
-            NombreProducto.HeaderText = "Producto";
-            NombreProducto.MinimumWidth = 6;
-            NombreProducto.Name = "NombreProducto";
-            NombreProducto.ReadOnly = true;
+            Nombre.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Nombre.DataPropertyName = "NombreProducto";
+            Nombre.HeaderText = "Producto";
+            Nombre.MinimumWidth = 6;
+            Nombre.Name = "Nombre";
+            Nombre.ReadOnly = true;
             // 
             // ProveedorProducto
             // 
             ProveedorProducto.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            ProveedorProducto.DataPropertyName = "Proveedor_Producto";
             ProveedorProducto.HeaderText = "Proveedor";
             ProveedorProducto.MinimumWidth = 6;
             ProveedorProducto.Name = "ProveedorProducto";
             ProveedorProducto.ReadOnly = true;
             ProveedorProducto.Width = 124;
             // 
-            // EstadoProceso
+            // Estado
             // 
-            EstadoProceso.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            EstadoProceso.DataPropertyName = "EstadoProceso";
-            EstadoProceso.HeaderText = "Estado";
-            EstadoProceso.MinimumWidth = 6;
-            EstadoProceso.Name = "EstadoProceso";
-            EstadoProceso.ReadOnly = true;
-            EstadoProceso.Width = 95;
+            Estado.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            Estado.DataPropertyName = "EstadoProceso";
+            Estado.HeaderText = "Estado";
+            Estado.MinimumWidth = 6;
+            Estado.Name = "Estado";
+            Estado.ReadOnly = true;
+            Estado.Width = 95;
             // 
             // pnVehiculo
             // 
@@ -393,9 +395,9 @@
             // 
             dgvCamiones.AllowUserToAddRows = false;
             dgvCamiones.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(174, 203, 224);
+            dataGridViewCellStyle5.BackColor = Color.White;
             dataGridViewCellStyle5.Font = new Font("Itim", 12F);
-            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.ForeColor = Color.Black;
             dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(90, 226, 138);
             dataGridViewCellStyle5.SelectionForeColor = Color.Black;
             dgvCamiones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
@@ -426,6 +428,7 @@
             dgvCamiones.EnableHeadersVisualStyles = false;
             dgvCamiones.GridColor = Color.White;
             dgvCamiones.Location = new Point(6, 39);
+            dgvCamiones.MultiSelect = false;
             dgvCamiones.Name = "dgvCamiones";
             dgvCamiones.ReadOnly = true;
             dgvCamiones.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -441,6 +444,7 @@
             dgvCamiones.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCamiones.Size = new Size(390, 206);
             dgvCamiones.TabIndex = 0;
+            dgvCamiones.SelectionChanged += dgvCamiones_SelectionChanged;
             // 
             // IdEntrada
             // 
@@ -518,6 +522,7 @@
             btnGuardarEntrada.TabIndex = 2;
             btnGuardarEntrada.Text = "Guardar Entrada";
             btnGuardarEntrada.UseVisualStyleBackColor = false;
+            btnGuardarEntrada.Click += btnGuardarEntrada_Click;
             // 
             // btnEditarEntrada
             // 
@@ -534,14 +539,15 @@
             btnEditarEntrada.TabIndex = 0;
             btnEditarEntrada.Text = "Editar";
             btnEditarEntrada.UseVisualStyleBackColor = false;
+            btnEditarEntrada.Click += btnEditarEntrada_Click;
             // 
             // dgvEntradas
             // 
             dgvEntradas.AllowUserToAddRows = false;
             dgvEntradas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(79, 129, 189);
+            dataGridViewCellStyle9.BackColor = Color.White;
             dataGridViewCellStyle9.Font = new Font("Itim", 12F);
-            dataGridViewCellStyle9.ForeColor = Color.White;
+            dataGridViewCellStyle9.ForeColor = Color.Black;
             dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(90, 226, 138);
             dataGridViewCellStyle9.SelectionForeColor = Color.Black;
             dgvEntradas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
@@ -559,7 +565,6 @@
             dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
             dgvEntradas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             dgvEntradas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEntradas.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4 });
             dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle11.BackColor = SystemColors.Window;
             dataGridViewCellStyle11.Font = new Font("Itim", 12F);
@@ -569,8 +574,9 @@
             dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
             dgvEntradas.DefaultCellStyle = dataGridViewCellStyle11;
             dgvEntradas.EnableHeadersVisualStyles = false;
-            dgvEntradas.GridColor = Color.White;
+            dgvEntradas.GridColor = Color.FromArgb(233, 238, 247);
             dgvEntradas.Location = new Point(17, 45);
+            dgvEntradas.MultiSelect = false;
             dgvEntradas.Name = "dgvEntradas";
             dgvEntradas.ReadOnly = true;
             dgvEntradas.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -584,45 +590,9 @@
             dgvEntradas.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             dgvEntradas.RowHeadersVisible = false;
             dgvEntradas.RowHeadersWidth = 51;
+            dgvEntradas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvEntradas.Size = new Size(856, 236);
             dgvEntradas.TabIndex = 3;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewTextBoxColumn1.DataPropertyName = "CodigoInternoProducto";
-            dataGridViewTextBoxColumn1.HeaderText = "Código";
-            dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.ReadOnly = true;
-            dataGridViewTextBoxColumn1.Width = 96;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn2.DataPropertyName = "NombreProducto";
-            dataGridViewTextBoxColumn2.HeaderText = "Producto";
-            dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewTextBoxColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn3.HeaderText = "Proveedor";
-            dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewTextBoxColumn4.DataPropertyName = "EstadoProceso";
-            dataGridViewTextBoxColumn4.HeaderText = "Estado";
-            dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            dataGridViewTextBoxColumn4.ReadOnly = true;
-            dataGridViewTextBoxColumn4.Width = 95;
             // 
             // label3
             // 
@@ -682,21 +652,17 @@
         private Button btnQuitarMovimiento;
         private Button btnEditarMoviento;
         private Button btnPesar;
-        private DataGridViewTextBoxColumn CodigoInternoProducto;
-        private DataGridViewTextBoxColumn NombreProducto;
-        private DataGridViewTextBoxColumn ProveedorProducto;
-        private DataGridViewTextBoxColumn EstadoProceso;
         private DataGridView dgvEntradas;
         private Label label3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private Panel panel1;
         private Button btnQuitarEntrada;
         private Button btnGuardarEntrada;
         private Button btnEditarEntrada;
         private DataGridViewTextBoxColumn IdEntrada;
         private DataGridViewTextBoxColumn PlacaCamion;
+        private DataGridViewTextBoxColumn CodigoInterno;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn ProveedorProducto;
+        private DataGridViewTextBoxColumn Estado;
     }
 }

@@ -32,7 +32,6 @@
             nombresFrms = new Panel();
             lblHeader = new Label();
             panelimagenVolver = new Panel();
-            pictureBox1 = new PictureBox();
             btnSlide = new PictureBox();
             menuVertical = new Panel();
             btnReporteria = new Button();
@@ -54,9 +53,10 @@
             btnUsuarios = new Button();
             pnContenedor = new Panel();
             pictureBox2 = new PictureBox();
+            panel1 = new Panel();
+            label1 = new Label();
             nombresFrms.SuspendLayout();
             panelimagenVolver.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnSlide).BeginInit();
             menuVertical.SuspendLayout();
             pnPesajes.SuspendLayout();
@@ -64,6 +64,7 @@
             pnUsers.SuspendLayout();
             pnContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // nombresFrms
@@ -81,17 +82,9 @@
             // 
             // panelimagenVolver
             // 
-            panelimagenVolver.Controls.Add(pictureBox1);
             panelimagenVolver.Controls.Add(btnSlide);
             resources.ApplyResources(panelimagenVolver, "panelimagenVolver");
             panelimagenVolver.Name = "panelimagenVolver";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.bimbo_nombre_escalado;
-            resources.ApplyResources(pictureBox1, "pictureBox1");
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.TabStop = false;
             // 
             // btnSlide
             // 
@@ -104,7 +97,7 @@
             // menuVertical
             // 
             resources.ApplyResources(menuVertical, "menuVertical");
-            menuVertical.BackColor = Color.FromArgb(31, 60, 136);
+            menuVertical.BackColor = Color.FromArgb(46, 90, 172);
             menuVertical.Controls.Add(btnReporteria);
             menuVertical.Controls.Add(pnPesajes);
             menuVertical.Controls.Add(btnPesaje);
@@ -266,6 +259,7 @@
             // pnContenedor
             // 
             pnContenedor.BackColor = Color.White;
+            pnContenedor.Controls.Add(panel1);
             pnContenedor.Controls.Add(pictureBox2);
             resources.ApplyResources(pnContenedor, "pnContenedor");
             pnContenedor.Name = "pnContenedor";
@@ -276,6 +270,19 @@
             pictureBox2.Image = Properties.Resources.bimbo_logo;
             pictureBox2.Name = "pictureBox2";
             pictureBox2.TabStop = false;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(31, 60, 136);
+            panel1.Controls.Add(label1);
+            resources.ApplyResources(panel1, "panel1");
+            panel1.Name = "panel1";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(label1, "label1");
+            label1.ForeColor = Color.White;
+            label1.Name = "label1";
             // 
             // MenuPrincipal
             // 
@@ -290,7 +297,6 @@
             nombresFrms.ResumeLayout(false);
             nombresFrms.PerformLayout();
             panelimagenVolver.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnSlide).EndInit();
             menuVertical.ResumeLayout(false);
             pnPesajes.ResumeLayout(false);
@@ -298,6 +304,8 @@
             pnUsers.ResumeLayout(false);
             pnContenedor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -321,11 +329,12 @@
         private Button btnMovimientosEntradas;
         private Button btnPesaje;
         private Button btnReporteria;
-        private PictureBox pictureBox1;
         private Label lblHeader;
         private Panel pnContenedor;
         private PictureBox pictureBox2;
         private Button button2;
         private Button button1;
+        private Panel panel1;
+        private Label label1;
     }
 }
