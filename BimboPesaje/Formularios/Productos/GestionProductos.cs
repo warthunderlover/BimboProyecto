@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaDatos.Repositorios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +28,7 @@ namespace BimboPesaje.Formularios.Productos
         {
             await CargarDatosDummy();
             await CargarComboBoxes();
+            await cargarPaises.CargarPaises(cmbPais);
             rbHabilitados.Checked = true;
         }
 
@@ -71,22 +73,6 @@ namespace BimboPesaje.Formularios.Productos
 
         protected async Task CargarComboBoxes()
         {
-            // === PAÍSES ===
-            cmbPais.Items.Clear();
-            cmbPais.Items.AddRange(new string[]
-            {
-                "México",
-                "Honduras",
-                "Guatemala",
-                "El Salvador",
-                "Nicaragua",
-                "Costa Rica",
-                "Panamá",
-                "Colombia",
-                "Chile",
-                "Argentina"
-            });
-
             // === CATEGORÍAS ===
             //cmbCategoria.Items.Clear();
             //cmbCategoria.Items.AddRange(new string[]
@@ -124,6 +110,7 @@ namespace BimboPesaje.Formularios.Productos
             //cmbCategoria.SelectedIndex = -1;
             cmbMarca.SelectedIndex = -1;
         }
+        
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
 

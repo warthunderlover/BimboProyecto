@@ -1,3 +1,5 @@
+using ServicioConexión.Conexion;
+
 namespace BimboPesaje
 {
     internal static class Program
@@ -14,6 +16,21 @@ namespace BimboPesaje
             Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Task.Run(async () =>
+            {
+                try
+                {
+                    var client = await ConexionSupabase.GetClientAsync();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al conectar: " + ex.Message, "Error",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Environment.Exit(0); // Si falla, cierra el sistema
+                }
+            }).GetAwaiter().GetResult(); // Bloquea hasta que termine
+
+
             Application.Run(new MenuPrincipal());
         }
     }
