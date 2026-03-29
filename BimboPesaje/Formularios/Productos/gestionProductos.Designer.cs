@@ -54,12 +54,13 @@
             dgvProductos = new DataGridView();
             Codigo = new DataGridViewTextBoxColumn();
             Producto = new DataGridViewTextBoxColumn();
-            MarcaProducto = new DataGridViewTextBoxColumn();
+            Fabricante = new DataGridViewTextBoxColumn();
             Pais = new DataGridViewTextBoxColumn();
             Contenido = new DataGridViewTextBoxColumn();
             Presentacion = new DataGridViewTextBoxColumn();
-            Proveedor = new DataGridViewTextBoxColumn();
+            Categoria = new DataGridViewTextBoxColumn();
             EstadoProducto = new DataGridViewTextBoxColumn();
+            CodigoInterno = new DataGridViewTextBoxColumn();
             pnContenedorHijo.SuspendLayout();
             pnBuscar.SuspendLayout();
             pnFiltro.SuspendLayout();
@@ -357,7 +358,7 @@
             dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvProductos.ColumnHeadersHeight = 36;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvProductos.Columns.AddRange(new DataGridViewColumn[] { Codigo, Producto, MarcaProducto, Pais, Contenido, Presentacion, Proveedor, EstadoProducto });
+            dgvProductos.Columns.AddRange(new DataGridViewColumn[] { Codigo, Producto, Fabricante, Pais, Contenido, Presentacion, Categoria, EstadoProducto, CodigoInterno });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Itim", 12F);
@@ -393,7 +394,7 @@
             // Codigo
             // 
             Codigo.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            Codigo.DataPropertyName = "Codigo";
+            Codigo.DataPropertyName = "codigoProducto";
             Codigo.HeaderText = "Código";
             Codigo.MinimumWidth = 6;
             Codigo.Name = "Codigo";
@@ -403,26 +404,26 @@
             // Producto
             // 
             Producto.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            Producto.DataPropertyName = "Producto";
+            Producto.DataPropertyName = "nombreProducto";
             Producto.HeaderText = "Producto";
             Producto.MinimumWidth = 6;
             Producto.Name = "Producto";
             Producto.ReadOnly = true;
             Producto.Width = 115;
             // 
-            // MarcaProducto
+            // Fabricante
             // 
-            MarcaProducto.DataPropertyName = "MarcaProducto";
-            MarcaProducto.HeaderText = "Marca";
-            MarcaProducto.MinimumWidth = 6;
-            MarcaProducto.Name = "MarcaProducto";
-            MarcaProducto.ReadOnly = true;
-            MarcaProducto.Width = 125;
+            Fabricante.DataPropertyName = "nombre_Fabricante";
+            Fabricante.HeaderText = "Fabricante";
+            Fabricante.MinimumWidth = 6;
+            Fabricante.Name = "Fabricante";
+            Fabricante.ReadOnly = true;
+            Fabricante.Width = 125;
             // 
             // Pais
             // 
             Pais.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            Pais.DataPropertyName = "Pais";
+            Pais.DataPropertyName = "nombre_Pais";
             Pais.HeaderText = "País";
             Pais.MinimumWidth = 6;
             Pais.Name = "Pais";
@@ -432,7 +433,7 @@
             // Contenido
             // 
             Contenido.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            Contenido.DataPropertyName = "Contenido";
+            Contenido.DataPropertyName = "contenidoProducto";
             Contenido.HeaderText = "Contenido";
             Contenido.MinimumWidth = 6;
             Contenido.Name = "Contenido";
@@ -442,30 +443,40 @@
             // Presentacion
             // 
             Presentacion.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Presentacion.DataPropertyName = "Presentacion";
+            Presentacion.DataPropertyName = "nombre_Presentacion";
             Presentacion.HeaderText = "Presentacion";
             Presentacion.MinimumWidth = 6;
             Presentacion.Name = "Presentacion";
             Presentacion.ReadOnly = true;
             // 
-            // Proveedor
+            // Categoria
             // 
-            Proveedor.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            Proveedor.DataPropertyName = "Proveedor";
-            Proveedor.HeaderText = "Proveedor";
-            Proveedor.MinimumWidth = 6;
-            Proveedor.Name = "Proveedor";
-            Proveedor.ReadOnly = true;
-            Proveedor.Width = 124;
+            Categoria.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            Categoria.DataPropertyName = "nombre_Categoria";
+            Categoria.HeaderText = "Categoria";
+            Categoria.MinimumWidth = 6;
+            Categoria.Name = "Categoria";
+            Categoria.ReadOnly = true;
+            Categoria.Width = 121;
             // 
             // EstadoProducto
             // 
-            EstadoProducto.DataPropertyName = "EstadoProducto";
+            EstadoProducto.DataPropertyName = "idEstado";
             EstadoProducto.HeaderText = "Estado";
             EstadoProducto.MinimumWidth = 6;
             EstadoProducto.Name = "EstadoProducto";
             EstadoProducto.ReadOnly = true;
             EstadoProducto.Width = 125;
+            // 
+            // CodigoInterno
+            // 
+            CodigoInterno.DataPropertyName = "idProducto";
+            CodigoInterno.HeaderText = "Codigo";
+            CodigoInterno.MinimumWidth = 6;
+            CodigoInterno.Name = "CodigoInterno";
+            CodigoInterno.ReadOnly = true;
+            CodigoInterno.Visible = false;
+            CodigoInterno.Width = 125;
             // 
             // GestionProductos
             // 
@@ -513,11 +524,12 @@
         private Button button1;
         private DataGridViewTextBoxColumn Codigo;
         private DataGridViewTextBoxColumn Producto;
-        private DataGridViewTextBoxColumn MarcaProducto;
+        private DataGridViewTextBoxColumn Fabricante;
         private DataGridViewTextBoxColumn Pais;
         private DataGridViewTextBoxColumn Contenido;
         private DataGridViewTextBoxColumn Presentacion;
-        private DataGridViewTextBoxColumn Proveedor;
+        private DataGridViewTextBoxColumn Categoria;
         private DataGridViewTextBoxColumn EstadoProducto;
+        private DataGridViewTextBoxColumn CodigoInterno;
     }
 }

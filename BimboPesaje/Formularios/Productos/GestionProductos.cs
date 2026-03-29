@@ -8,12 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaDatos.Modelados;
+using productosLista = CapaDatos.Modelados.Productos.Productos;
 
 namespace BimboPesaje.Formularios.Productos
 {
     public partial class GestionProductos : Form
     {
-        private DataTable _tablaOriginal;
+        private List<productosLista> _listaOriginal = new List<productosLista>();
         // Propiedades públicas con los datos del producto seleccionado
         public string CodigoSeleccionado { get; private set; }
         public string ProductoSeleccionado { get; private set; }
@@ -26,94 +28,46 @@ namespace BimboPesaje.Formularios.Productos
 
         private async void GestionProductos_Load(object sender, EventArgs e)
         {
-            await CargarDatosDummy();
+            await CargarDatos();
             await CargarComboBoxes();
             await cargarPaises.CargarPaises(cmbPais);
-            rbHabilitados.Checked = true;
+            dgvProductos.AutoGenerateColumns = false;
+            //rbHabilitados.Checked = true;
         }
 
-        private async Task CargarDatosDummy()
+        private async Task CargarDatos()
         {
-            DataTable tabla = new DataTable();
-            tabla.Columns.Add("Codigo");
-            tabla.Columns.Add("Producto");
-            tabla.Columns.Add("MarcaProducto");
-            tabla.Columns.Add("Pais");
-            tabla.Columns.Add("Contenido");
-            tabla.Columns.Add("Presentacion");
-            tabla.Columns.Add("Proveedor");
-            tabla.Columns.Add("EstadoProducto");
-
-            // Codigo, Producto, Marca, Pais, Contenido, Presentacion, Proveedor, Estado
-            tabla.Rows.Add("A28910", "ACEITE DE PALMA RBD", "Bimbo", "Honduras", "-", "-", "AGROTOR/JAREMAR", "Activo");
-            tabla.Rows.Add("A81314", "ACEITE DE SOYA", "Bimbo", "Honduras", "-", "-", "AGROTOR/JAREMAR", "Activo");
-            tabla.Rows.Add("A953506", "CHISPAS GOTAS SABOR CHOCOLATE BLANCO 2M PT0301171", "Marinela", "México", "-", "-", "ALPEZZI", "Activo");
-            tabla.Rows.Add("A906414", "RELLENO WAFER CACAHUATE", "Ricolino", "México", "-", "-", "ALPEZZI", "Activo");
-            tabla.Rows.Add("A953571", "CHISPAS GOTAS SABOR LIMON 7M", "Marinela", "México", "-", "-", "ALPEZZI", "Activo");
-            tabla.Rows.Add("A953501", "CHISPAS GOTAS SABOR LIMON 2M", "Marinela", "México", "-", "-", "ALPEZZI", "Activo");
-            tabla.Rows.Add("A953503", "CHISPAS GOTAS SABOR CHOCOLATE 7M", "Tía Rosa", "México", "-", "-", "ALPEZZI", "Activo");
-            tabla.Rows.Add("A943551", "COBERTURA SABOR CHOCOLATE BLANCO", "Barcel", "México", "-", "-", "ALPEZZI", "Activo");
-            tabla.Rows.Add("A82620", "MERMELADA DE FRESA (1) BARRITA", "Marinela", "México", "-", "-", "ALTEX FLEXPORT", "Activo");
-            tabla.Rows.Add("A82621", "MERMELADA DE PIÑA (1) BARRITA", "Marinela", "México", "-", "-", "ALTEX FLEXPORT", "Activo");
-            tabla.Rows.Add("A906557", "COBERTURA LAYER LACTEA BL", "Bimbo", "México", "-", "-", "BARRY CALLEBAUT", "Inactivo");
-            tabla.Rows.Add("A82144", "GOTAS DE CHOCOLATE 7000", "Ricolino", "México", "-", "-", "BARRY CALLEBAUT", "Inactivo");
-            tabla.Rows.Add("A953508", "CHISPAS DE CHOCOLATE 2000CT CHD-DR-7000322-050", "Barcel", "México", "-", "-", "BARRY CALLEBAUT", "Inactivo");
-            tabla.Rows.Add("A52221", "CHISPA DE CHOCOLATE AMARGO CHD-DR-7144101-050", "Wonder", "México", "-", "-", "BARRY CALLEBAUT", "Inactivo");
-            tabla.Rows.Add("A50568", "MANTECA VEGETAL TIPO VIII", "Bimbo", "Guatemala", "-", "-", "BIMBO CENTROAMERICA", "Inactivo");
-            tabla.Rows.Add("A82131", "COCOA EN POLVO ALCALINA (Roja)", "Tía Rosa", "Guatemala", "-", "-", "BIMBO CENTROAMERICA", "Inactivo");
-            tabla.Rows.Add("A82197", "COCOA EN POLVO ALCALINA 11-D-050", "Oroweat", "Guatemala", "-", "-", "BIMBO CENTROAMERICA", "Inactivo");
-            tabla.Rows.Add("A81502", "AZUCAR NORMAL", "Bimbo", "Honduras", "-", "-", "CISA", "Inactivo");
-            tabla.Rows.Add("A82331", "COLOR ROJO FRESA 6-340 (3%)", "Entenmann's", "México", "-", "-", "COLOR SENSIENT", "Inactivo");
-            tabla.Rows.Add("A962771", "COLOR TERRA NATURAL BROWN POWDER 04919 SENSIENT", "Sara Lee", "México", "-", "-", "COLOR SENSIENT", "Inactivo");
-
-            dgvProductos.AutoGenerateColumns = false;
-            _tablaOriginal = tabla;
-            dgvProductos.DataSource = tabla;
+            try
+            {
+                // Usar el nombre de tipo para llamar al método estático
+                _listaOriginal = await RepositorioProducto.obtenerProductosJoin();
+                dgvProductos.DataSource = _listaOriginal;
+                AplicarFiltros();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar productos: " + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         protected async Task CargarComboBoxes()
         {
-            // === CATEGORÍAS ===
-            //cmbCategoria.Items.Clear();
-            //cmbCategoria.Items.AddRange(new string[]
-            //{
-            //    "Pan de Caja",
-            //    "Pan Dulce",
-            //    "Galletas",
-            //    "Pasteles y Tortas",
-            //    "Bollería",
-            //    "Barras y Snacks",
-            //    "Tortillas",
-            //    "Tostadas",
-            //    "Bagels y Muffins",
-            //    "Productos Sin Gluten"
-            //});
-
-            // === PROVEEDORES ===
             cmbMarca.Items.Clear();
             cmbMarca.Items.AddRange(new string[]
             {
-                "Bimbo",
-                "Marinela",
-                "Tía Rosa",
-                "Ricolino",
-                "Barcel",
-                "Wonder",
-                "Entenmann's",
-                "Thomas'",
-                "Sara Lee",
-                "Oroweat"
+                "Bimbo", "Marinela", "Tía Rosa", "Ricolino",
+                "Barcel", "Wonder", "Entenmann's", "Thomas'",
+                "Sara Lee", "Oroweat"
             });
 
-            // Opcional: texto por defecto
             cmbPais.SelectedIndex = -1;
-            //cmbCategoria.SelectedIndex = -1;
             cmbMarca.SelectedIndex = -1;
         }
-        
+
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
-
+            AplicarFiltros();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -136,51 +90,46 @@ namespace BimboPesaje.Formularios.Productos
 
         private void cmbPaises_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FiltrarDGV();
+            //FiltrarDGV();
         }
 
         private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FiltrarDGV();
+            //FiltrarDGV();
         }
 
         private void cmbProveedor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FiltrarDGV();
+            //FiltrarDGV();
         }
 
-        private void FiltrarPorEstado(string estado)
+        private void AplicarFiltros()
         {
-            var filasFiltradas = _tablaOriginal.AsEnumerable()
-                                               .Where(row => row["EstadoProducto"]
-                                               .ToString() == estado);
+            var query = _listaOriginal.AsEnumerable();
 
-            dgvProductos.DataSource = filasFiltradas.Any()
-                ? filasFiltradas.CopyToDataTable()
-                : _tablaOriginal.Clone();
-        }
-        private void FiltrarDGV()
-        {
-            var filas = _tablaOriginal.AsEnumerable().AsEnumerable();
+            // Filtro por estado (radio buttons)
+            if (rbHabilitados.Checked)
+                query = query.Where(p => p.idEstado == 1);
+            else if (rbDeshabilitados.Checked)
+                query = query.Where(p => p.idEstado != 1);
 
-            // Filtro por País
-            if (cmbPais.SelectedIndex != -1)
-                filas = filas.Where(row => row["Pais"].ToString() == cmbPais.SelectedItem.ToString());
+            // Filtro por país
+            if (cmbPais.SelectedItem is Paises paisSeleccionado)
+                query = query.Where(p => p.idPais == paisSeleccionado.idPais);
 
-            // Filtro por Categoría
-            //if (cmbCategoria.SelectedIndex != -1)
-            //    filas = filas.Where(row => row["Categoria"].ToString() == cmbCategoria.SelectedItem.ToString());
-
-            // Filtro por Proveedor
+            // Filtro por marca
             if (cmbMarca.SelectedIndex != -1)
-                filas = filas.Where(row => row["MarcaProducto"].ToString() == cmbMarca.SelectedItem.ToString());
+                query = query.Where(p => p.Fabricante?.nombreFabricante == cmbMarca.SelectedItem.ToString());
 
-            // Aplicar filtro
-            dgvProductos.DataSource = filas.Any()
-                ? filas.CopyToDataTable()
-                : _tablaOriginal.Clone();
+            // Filtro por búsqueda de texto
+            string texto = txtBusqueda.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(texto))
+                query = query.Where(p =>
+                    (p.nombreProducto?.IndexOf(texto, StringComparison.OrdinalIgnoreCase) >= 0) ||
+                    (p.codigoProducto?.IndexOf(texto, StringComparison.OrdinalIgnoreCase) >= 0));
+
+            dgvProductos.DataSource = query.ToList();
         }
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             // Limpiar selecciones de los ComboBox
@@ -192,23 +141,21 @@ namespace BimboPesaje.Formularios.Productos
             rbTodos.Checked = true;
 
             // Restaurar tabla original
-            dgvProductos.DataSource = _tablaOriginal;
+            AplicarFiltros();
         }
         private void rbHabilitados_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbHabilitados.Checked)
-                FiltrarPorEstado("Activo");
+            if (rbHabilitados.Checked) AplicarFiltros();
         }
+
         private void rbDeshabilitados_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbDeshabilitados.Checked)
-                FiltrarPorEstado("Inactivo");
+            if (rbDeshabilitados.Checked) AplicarFiltros();
         }
 
         private void rbTodos_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbTodos.Checked)
-                dgvProductos.DataSource = _tablaOriginal;
+            if (rbTodos.Checked) AplicarFiltros();
         }
     }
 }
