@@ -46,9 +46,15 @@ namespace BimboPesaje.Formularios.Movimientos
             _tablaEntradas.Columns.Add("Producto");
             _tablaEntradas.Columns.Add("Proveedor");
             _tablaEntradas.Columns.Add("PesoNeto", typeof(double));
+            
 
             dgvEntradas.DataSource = _tablaEntradas;
             dgvMateriaPrima.Visible = false;
+            // Estilo Fill para que llenen el DGV
+            dgvEntradas.Columns["Codigo"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvEntradas.Columns["Producto"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvEntradas.Columns["Proveedor"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvEntradas.Columns["PesoNeto"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -84,12 +90,14 @@ namespace BimboPesaje.Formularios.Movimientos
         {
             if (dgvCamiones.CurrentRow == null) return;
 
+            if (dgvCamiones.CurrentRow.Cells["IdEntrada"].Value == null) return;
+
             int idCamion = Convert.ToInt32(dgvCamiones.CurrentRow.Cells["IdEntrada"].Value);
 
-            // 🔥 Cambiar productos según el camión seleccionado
             if (_productosPorCamion.ContainsKey(idCamion))
             {
                 dgvMateriaPrima.DataSource = _productosPorCamion[idCamion];
+                dgvMateriaPrima.ClearSelection();
             }
         }
 
@@ -109,22 +117,23 @@ namespace BimboPesaje.Formularios.Movimientos
 
         private void btnAgregarMovimiento_Click(object sender, EventArgs e)
         {
-            if (_contadorCamion == 0)
+            if (dgvCamiones.CurrentRow == null)
             {
-                MessageBox.Show("Primero agregue un camión.", "Advertencia",
+                MessageBox.Show("Seleccione un camión.", "Advertencia",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            int idCamion = Convert.ToInt32(dgvCamiones.CurrentRow.Cells["IdEntrada"].Value);
             GestionProductos form = new GestionProductos();
 
             if (form.ShowDialog(this) == DialogResult.OK) // ← Solo UNA vez
             {
                 // Usar el DataTable del camión actual en lugar de _tablaMateriaPrima
-                _productosPorCamion[_contadorCamion].Rows.Add(
-                    form.CodigoSeleccionado,
-                    form.ProductoSeleccionado,
-                    form.ProveedorSeleccionado
+                _productosPorCamion[idCamion].Rows.Add(
+                        form.CodigoSeleccionado,
+                        form.ProductoSeleccionado,
+                        form.ProveedorSeleccionado
                 //form.EstadoSeleccionado
                 );
             }
@@ -214,14 +223,14 @@ namespace BimboPesaje.Formularios.Movimientos
             string producto = dgvEntradas.CurrentRow.Cells[1].Value.ToString();
             string proveedor = dgvEntradas.CurrentRow.Cells[2].Value.ToString();
             double pesoNeto = Convert.ToDouble(dgvEntradas.CurrentRow.Cells[3].Value);
-            double pesoBruto = Convert.ToDouble(dgvEntradas.CurrentRow.Cells[4].Value);
+            //double pesoBruto = Convert.ToDouble(dgvEntradas.CurrentRow.Cells[4].Value);
 
             RegistrarPesos form = new RegistrarPesos(
                 codigo,
                 producto,
                 proveedor,
-                pesoNeto,
-                pesoBruto
+                pesoNeto
+                //pesoBruto
             );
 
             form.ShowDialog(this);

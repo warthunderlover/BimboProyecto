@@ -18,49 +18,52 @@ namespace BimboPesaje.Formularios.Productos
         public RegistrarPesos(string placa, string producto, string proveedor)
         {
             InitializeComponent();
-            // Formato de fechas
-            dtpFechaEntrada.Format = DateTimePickerFormat.Custom;
-            dtpFechaEntrada.CustomFormat = "dd/MM/yyyy HH:mm";
-            dtpFechaSalida.Format = DateTimePickerFormat.Custom;
-            dtpFechaSalida.CustomFormat = "dd/MM/yyyy HH:mm";
+            ConfigurarFechas();
+            CargarValoresDummy();
 
-            // Precargar valores del form anterior
             txtPlaca.Text = placa;
             txtProducto.Text = producto;
             txtProveedor.Text = proveedor;
 
-            // Valores dummy
-            txtReporteNo.Text = $"REP-{DateTime.Now:yyyyMMddHHmm}";
-            dtpFechaEntrada.Value = DateTime.Now;
-            dtpFechaSalida.Value = DateTime.Now.AddHours(2);
-            txtPesoBruto.Text = "5000.00";
-
-            //txtPesoNeto.Text = "1450.00";
-            txtPeseTaraInd.Text = "50.00";
-            txtPesoNetTotal.Text = "1400.00";
-            txtPesoTaraExtra.Text = "25.00";
-            txtNoBultos.Text = "10";
-            txtObservaciones.Text = "Sin observaciones.";
 
             CalcularDiferencia();
         }
-        public RegistrarPesos(string codigo, string producto, string proveedor, double pesoNeto, double pesoBruto)
+
+        public RegistrarPesos(string codigo, string producto, string proveedor, double pesoNeto)
         {
             InitializeComponent();
+            ConfigurarFechas();
+            CargarValoresDummy(); 
 
+            txtPlaca.Text = codigo;
+            txtProducto.Text = producto;
+            txtProveedor.Text = proveedor;
+            txtPesoNeto.Text = pesoNeto.ToString("F2");
+            txtPesoNetTotal.Text = pesoNeto.ToString("F2");
+            
+            CalcularDiferencia();
+        }
+
+        // ===== MÉTODOS COMPARTIDOS =====
+        private void ConfigurarFechas()
+        {
             dtpFechaEntrada.Format = DateTimePickerFormat.Custom;
             dtpFechaEntrada.CustomFormat = "dd/MM/yyyy HH:mm";
             dtpFechaSalida.Format = DateTimePickerFormat.Custom;
             dtpFechaSalida.CustomFormat = "dd/MM/yyyy HH:mm";
+            dtpFechaEntrada.Value = DateTime.Now;
+            dtpFechaSalida.Value = DateTime.Now.AddHours(2);
+        }
 
-            txtPlaca.Text = codigo; // o cámbialo si tienes placa real
-            txtProducto.Text = producto;
-            txtProveedor.Text = proveedor;
-
-            txtPesoNeto.Text = pesoNeto.ToString("F2");
-            txtPesoBruto.Text = pesoBruto.ToString("F2");
-
-            CalcularDiferencia();
+        private void CargarValoresDummy()
+        {
+            txtReporteNo.Text = $"REP-{DateTime.Now:yyyyMMddHHmm}";
+            txtPesoBruto.Text = "5000.00";
+            txtPeseTaraInd.Text = "50.00";
+            //txtPesoNetTotal.Text = "1400.00";
+            txtPesoTaraExtra.Text = "25.00";
+            txtNoBultos.Text = "10";
+            txtObservaciones.Text = "Sin observaciones.";
         }
 
         private void RegistrarPesos_Load(object sender, EventArgs e)
