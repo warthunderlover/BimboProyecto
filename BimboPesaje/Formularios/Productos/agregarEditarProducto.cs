@@ -1,5 +1,6 @@
 ﻿using CapaDatos.Modelados;
 using CapaDatos.Modelados.Productos;
+using CapaDatos.Repositorios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,26 +31,27 @@ namespace BimboPesaje.Formularios.Productos
             await cargarPaises.CargarPaises(cmbPaisImportado);
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private async void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
 
-                var parametros = new Productos
+                ProductosInsertar productos = new ProductosInsertar
                 {
-                    codigoProducto = txtCodigoInterno.Text,
-                    nombreProducto = txtNombreProducto.Text,
-
-                    idFabricante = idFabricanteSeleccionado,
-                    idCategoria = idCategoriaSeleccionada,
-                    idPresentacion = idPresentacionSeleccionada,
-
-                    contenidoProducto = txtContenido.Text,
-
+                    codigoProducto = txtCodigoInterno.Text.Trim(),
+                    nombreProducto = txtNombreProducto.Text.Trim(),
+                    idFabricante = Convert.ToInt32(txtFabricante.Text.Trim()),
+                    idCategoria = Convert.ToInt32(txtCategoria.Text.Trim()),
+                    idPresentacion = Convert.ToInt32(txtPresentacion.Text.Trim()),
+                    idTara = 1, // Asignar un valor predeterminado o permitir que el usuario lo seleccione
+                    contenidoProducto = txtContenido.Text.Trim(),
                     idPais = (cmbPaisImportado.SelectedItem as Paises)?.idPais ?? 0,
-
-                    idEstado = rbActivo.Checked ? 1 : 0
+                    idEstado = rbActivo.Checked ? 1 : 0,
+                    pesoTeorico = Convert.ToDecimal(txtPeso.Text.Trim())
                 };
+
+
+                await RepositorioProducto.ingresarProducto(productos);
 
                 MessageBox.Show("Producto guardado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();

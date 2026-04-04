@@ -1,3 +1,4 @@
+using CapaServicios;
 using ServicioConexión.Conexion;
 
 namespace BimboPesaje
@@ -21,6 +22,7 @@ namespace BimboPesaje
                 try
                 {
                     var client = await ConexionSupabase.GetClientAsync();
+                    await GestorRealtime.IniciarAsync();
                 }
                 catch (Exception ex)
                 {

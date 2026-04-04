@@ -48,13 +48,12 @@ namespace CapaDatos.Repositorios
             }
         }
 
-        public static async Task<Productos> ingresarProducto(Productos datos)
+        public static async Task<ProductosInsertar> ingresarProducto(ProductosInsertar datos)
         {
             try
             {
                 var client = await ConexionSupabase.GetClientAsync();
-                var response = await client
-                                            .From<Productos>()
+                var response = await client .From<ProductosInsertar>()
                                             .Insert(datos);
                 return response.Model ?? null;
 
