@@ -8,8 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaDatos.Modelados;
 using productosLista = CapaDatos.Modelados.Productos.Productos;
+using CapaDatos.Modelados.Productos;
 
 namespace BimboPesaje.Formularios.Productos
 {
@@ -24,6 +24,8 @@ namespace BimboPesaje.Formularios.Productos
         public GestionProductos()
         {
             InitializeComponent();
+            dgvProductos.AutoGenerateColumns = false;
+
         }
 
         private async void GestionProductos_Load(object sender, EventArgs e)
@@ -31,7 +33,6 @@ namespace BimboPesaje.Formularios.Productos
             await CargarDatos();
             await CargarComboBoxes();
             await cargarPaises.CargarPaises(cmbPais);
-            dgvProductos.AutoGenerateColumns = false;
             //rbHabilitados.Checked = true;
         }
 
@@ -81,7 +82,7 @@ namespace BimboPesaje.Formularios.Productos
 
             CodigoSeleccionado = dgvProductos.SelectedRows[0].Cells["Codigo"].Value?.ToString();
             ProductoSeleccionado = dgvProductos.SelectedRows[0].Cells["Producto"].Value?.ToString();
-            ProveedorSeleccionado = dgvProductos.SelectedRows[0].Cells["Proveedor"].Value?.ToString();
+            ProveedorSeleccionado = dgvProductos.SelectedRows[0].Cells["Fabricante"].Value?.ToString();
             //EstadoSeleccionado = dgvProductos.SelectedRows[0].Cells["EstadoProducto"].Value?.ToString();
 
             this.DialogResult = DialogResult.OK;
@@ -156,6 +157,12 @@ namespace BimboPesaje.Formularios.Productos
         private void rbTodos_CheckedChanged(object sender, EventArgs e)
         {
             if (rbTodos.Checked) AplicarFiltros();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            agregarEditarProducto formAgregar = new agregarEditarProducto();    
+            formAgregar.ShowDialog();
         }
     }
 }

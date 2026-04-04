@@ -1,4 +1,4 @@
-﻿using CapaDatos.Modelados;
+﻿using CapaDatos.Modelados.Productos;
 using ServicioConexión.Conexion;
 using System;
 using System.Collections.Generic;

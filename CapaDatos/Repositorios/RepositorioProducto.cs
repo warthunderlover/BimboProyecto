@@ -47,5 +47,24 @@ namespace CapaDatos.Repositorios
                 throw;
             }
         }
+
+        public static async Task<Productos> ingresarProducto(Productos datos)
+        {
+            try
+            {
+                var client = await ConexionSupabase.GetClientAsync();
+                var response = await client
+                                            .From<Productos>()
+                                            .Insert(datos);
+                return response.Model ?? null;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al ingresar producto: {ex.Message}");
+                throw;
+            }
+        }
+
     }
 }

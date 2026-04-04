@@ -50,15 +50,15 @@ namespace CapaDatos.Modelados.Productos
         /// Esto va a permitir que no tenga que estar duplicando modelados
         /// usando las navegaciones para las relaciones
         /// </summary>
-        public Presentacion Presentacion { get; set; }
+        public Presentacion presentacion_producto { get; set; }
         public Fabricante Fabricante { get; set; }
         public Categoria Categoria { get; set; }
-        public Paises Pais { get; set; }
+        public Paises Paises { get; set; }
 
-        public string nombre_Presentacion => Presentacion?.nombrePresentacion ?? "Sin presentación";
+        public string nombre_Presentacion => presentacion_producto?.nombrePresentacion ?? "Sin presentación";
         public string nombre_Fabricante => Fabricante?.nombreFabricante ?? "Sin fabricante";
         public string nombre_Categoria => Categoria?.nombreCategoria ?? "Sin categoría";
-        public string nombre_Pais => Pais?.nombrePais ?? "Sin país";
+        public string nombre_Pais => Paises?.nombrePais ?? "Sin país";
 
     }
 }

@@ -248,6 +248,8 @@
             // cmbPais
             // 
             cmbPais.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            cmbPais.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbPais.AutoCompleteSource = AutoCompleteSource.ListItems;
             cmbPais.Font = new Font("Itim", 11F);
             cmbPais.FormattingEnabled = true;
             cmbPais.Location = new Point(777, 4);
@@ -289,6 +291,7 @@
             btnNuevo.TabIndex = 0;
             btnNuevo.Text = "Nuevo Producto";
             btnNuevo.UseVisualStyleBackColor = false;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // btnEditar
             // 

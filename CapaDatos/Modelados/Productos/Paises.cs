@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Supabase.Postgrest.Attributes;
 using Supabase.Postgrest.Models;
 
-namespace CapaDatos.Modelados
+namespace CapaDatos.Modelados.Productos
 {
     [Table("paises")]
    public class Paises : BaseModel
