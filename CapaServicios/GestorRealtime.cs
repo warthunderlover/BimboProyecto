@@ -3,6 +3,7 @@ using Supabase.Realtime;
 using Supabase.Realtime.PostgresChanges;
 using static Supabase.Realtime.PostgresChanges.PostgresChangesOptions;
 using CapaDatos.Modelados.Productos;
+using CapaDatos.Modelados.Usuarios;
 
 
 namespace CapaServicios
@@ -12,12 +13,16 @@ namespace CapaServicios
         private static Supabase.Client? _client;
         private static RealtimeChannel? _productosChannel;
         private static RealtimeChannel? _categoriasChannel;
+        private static RealtimeChannel? _empleadosChannel;
+        private static RealtimeChannel? _usuariosChannel;
 
         private static bool _iniciado = false;
         private static readonly SemaphoreSlim _lock = new SemaphoreSlim(1, 1);
 
         public static event Action<PostgresChangesResponse>? OnProductosChanged;
         public static event Action<PostgresChangesResponse>? OnCategoriasChanged;
+        public static event Action<PostgresChangesResponse>? OnEmpleadosChanged;
+        public static event Action<PostgresChangesResponse>? OnUsuariosChanged;
 
         public static bool EstaIniciado => _iniciado;
 
@@ -43,6 +48,16 @@ namespace CapaServicios
                 _categoriasChannel = await _client.From<Categoria>().On(ListenType.All, (sender, change) =>
                 {
                     try { OnCategoriasChanged?.Invoke(change);} catch { }
+                });
+
+                _empleadosChannel = await _client.From<Empleados>().On(ListenType.All, (sender, change) =>
+                {
+                    try { OnEmpleadosChanged?.Invoke(change); } catch { }
+                });
+
+                _usuariosChannel = await _client.From<Usuarios>().On(ListenType.All, (sender, change) =>
+                {
+                    try { OnUsuariosChanged?.Invoke(change); } catch { }
                 });
 
                 _iniciado = true;

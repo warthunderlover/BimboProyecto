@@ -1,5 +1,6 @@
 using BimboPesaje.Formularios.Movimientos;
 using BimboPesaje.Formularios.Productos;
+using BimboPesaje.Formularios.Usuarios;
 using System.Threading.Tasks;
 
 namespace BimboPesaje
@@ -219,6 +220,8 @@ namespace BimboPesaje
         #region navegacion_entre_forms
         private async void btnGestionEmpleados_Click(object sender, EventArgs e)
         {
+            await abrirFormHijo(new GestiónEmpleados());
+            lblHeader.Text = "Gestión de empleados";
             await ColapsarMenu();
         }
 
