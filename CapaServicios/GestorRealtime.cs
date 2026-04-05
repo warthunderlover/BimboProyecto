@@ -4,17 +4,20 @@ using Supabase.Realtime.PostgresChanges;
 using static Supabase.Realtime.PostgresChanges.PostgresChangesOptions;
 using CapaDatos.Modelados.Productos;
 
+
 namespace CapaServicios
 {
     public static class GestorRealtime
     {
         private static Supabase.Client? _client;
         private static RealtimeChannel? _productosChannel;
+        private static RealtimeChannel? _categoriasChannel;
 
         private static bool _iniciado = false;
         private static readonly SemaphoreSlim _lock = new SemaphoreSlim(1, 1);
 
         public static event Action<PostgresChangesResponse>? OnProductosChanged;
+        public static event Action<PostgresChangesResponse>? OnCategoriasChanged;
 
         public static bool EstaIniciado => _iniciado;
 
@@ -35,6 +38,11 @@ namespace CapaServicios
                 _productosChannel = await _client.From<Productos>().On(ListenType.All, (sender, change) =>
                 {
                     try { OnProductosChanged?.Invoke(change); } catch { }
+                });
+
+                _categoriasChannel = await _client.From<Categoria>().On(ListenType.All, (sender, change) =>
+                {
+                    try { OnCategoriasChanged?.Invoke(change);} catch { }
                 });
 
                 _iniciado = true;

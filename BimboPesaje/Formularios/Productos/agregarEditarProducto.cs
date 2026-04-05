@@ -16,7 +16,7 @@ namespace BimboPesaje.Formularios.Productos
 {
     public partial class agregarEditarProducto : Form
     {
-        private List<Paises> _listaPaises= new List<Paises>();
+        private List<Paises> _listaPaises = new List<Paises>();
         private int idFabricanteSeleccionado;
         private int idCategoriaSeleccionada;
         private int idPresentacionSeleccionada;
@@ -25,7 +25,15 @@ namespace BimboPesaje.Formularios.Productos
         {
             InitializeComponent();
         }
-        
+
+        public agregarEditarProducto(int idFabricante, int idCategoria, int idPresentacion)
+        {
+            InitializeComponent();
+            this.idFabricanteSeleccionado = idFabricante;
+            this.idCategoriaSeleccionada = idCategoria;
+            this.idPresentacionSeleccionada = idPresentacion;
+        }
+
         private async void agregarEditarProducto_Load(object sender, EventArgs e)
         {
             await cargarPaises.CargarPaises(cmbPaisImportado);
@@ -66,6 +74,23 @@ namespace BimboPesaje.Formularios.Productos
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnPre_Click(object sender, EventArgs e)
+        {
+            GestionProveedores gestion = new GestionProveedores();
+            gestion.ShowDialog();
+        }
+
+        private void btnFab_Click(object sender, EventArgs e)
+        {
+            using var frm = new GestionFabricantes();
+
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                idFabricanteSeleccionado = frm.IdFabricanteSeleccionado;
+                txtFabricante.Text = frm.NombreFabricanteSeleccionado;
+            }
         }
     }
 }

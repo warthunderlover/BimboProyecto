@@ -39,8 +39,9 @@
             btnMovimientosEntradas = new Button();
             btnPesaje = new Button();
             pnProductos = new Panel();
-            button2 = new Button();
-            button1 = new Button();
+            btnContactosFabricantes = new Button();
+            btnContactosProveedor = new Button();
+            btnCategorias = new Button();
             btnGestionFabricantes = new Button();
             btnGestionProveedores = new Button();
             btnGestionProductos = new Button();
@@ -52,9 +53,9 @@
             btnGestionEmpleados = new Button();
             btnUsuarios = new Button();
             pnContenedor = new Panel();
-            pictureBox2 = new PictureBox();
             panel1 = new Panel();
             label1 = new Label();
+            pictureBox2 = new PictureBox();
             nombresFrms.SuspendLayout();
             panelimagenVolver.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnSlide).BeginInit();
@@ -63,8 +64,8 @@
             pnProductos.SuspendLayout();
             pnUsers.SuspendLayout();
             pnContenedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // nombresFrms
@@ -146,29 +147,37 @@
             // pnProductos
             // 
             pnProductos.BackColor = Color.FromArgb(79, 125, 209);
-            pnProductos.Controls.Add(button2);
-            pnProductos.Controls.Add(button1);
+            pnProductos.Controls.Add(btnContactosFabricantes);
+            pnProductos.Controls.Add(btnContactosProveedor);
+            pnProductos.Controls.Add(btnCategorias);
             pnProductos.Controls.Add(btnGestionFabricantes);
             pnProductos.Controls.Add(btnGestionProveedores);
             pnProductos.Controls.Add(btnGestionProductos);
             resources.ApplyResources(pnProductos, "pnProductos");
             pnProductos.Name = "pnProductos";
             // 
-            // button2
+            // btnContactosFabricantes
             // 
-            resources.ApplyResources(button2, "button2");
-            button2.FlatAppearance.BorderSize = 0;
-            button2.Name = "button2";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click_1;
+            resources.ApplyResources(btnContactosFabricantes, "btnContactosFabricantes");
+            btnContactosFabricantes.FlatAppearance.BorderSize = 0;
+            btnContactosFabricantes.Name = "btnContactosFabricantes";
+            btnContactosFabricantes.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnContactosProveedor
             // 
-            resources.ApplyResources(button1, "button1");
-            button1.FlatAppearance.BorderSize = 0;
-            button1.Name = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            resources.ApplyResources(btnContactosProveedor, "btnContactosProveedor");
+            btnContactosProveedor.FlatAppearance.BorderSize = 0;
+            btnContactosProveedor.Name = "btnContactosProveedor";
+            btnContactosProveedor.UseVisualStyleBackColor = true;
+            btnContactosProveedor.Click += button2_Click_1;
+            // 
+            // btnCategorias
+            // 
+            resources.ApplyResources(btnCategorias, "btnCategorias");
+            btnCategorias.FlatAppearance.BorderSize = 0;
+            btnCategorias.Name = "btnCategorias";
+            btnCategorias.UseVisualStyleBackColor = true;
+            btnCategorias.Click += btnCategorias_Click;
             // 
             // btnGestionFabricantes
             // 
@@ -264,13 +273,6 @@
             resources.ApplyResources(pnContenedor, "pnContenedor");
             pnContenedor.Name = "pnContenedor";
             // 
-            // pictureBox2
-            // 
-            resources.ApplyResources(pictureBox2, "pictureBox2");
-            pictureBox2.Image = Properties.Resources.bimbo_logo;
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.TabStop = false;
-            // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(31, 60, 136);
@@ -283,6 +285,13 @@
             resources.ApplyResources(label1, "label1");
             label1.ForeColor = Color.White;
             label1.Name = "label1";
+            // 
+            // pictureBox2
+            // 
+            resources.ApplyResources(pictureBox2, "pictureBox2");
+            pictureBox2.Image = Properties.Resources.bimbo_logo;
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.TabStop = false;
             // 
             // MenuPrincipal
             // 
@@ -303,9 +312,9 @@
             pnProductos.ResumeLayout(false);
             pnUsers.ResumeLayout(false);
             pnContenedor.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -332,9 +341,10 @@
         private Label lblHeader;
         private Panel pnContenedor;
         private PictureBox pictureBox2;
-        private Button button2;
-        private Button button1;
+        private Button btnContactosProveedor;
+        private Button btnCategorias;
         private Panel panel1;
         private Label label1;
+        private Button btnContactosFabricantes;
     }
 }

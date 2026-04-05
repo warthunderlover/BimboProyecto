@@ -13,6 +13,8 @@ namespace BimboPesaje.Formularios.Productos
     public partial class GestionFabricantes : Form
     {
         private DataTable _tablaOriginal;
+        public int IdFabricanteSeleccionado { get; private set; }
+        public string NombreFabricanteSeleccionado { get; private set; }
         public GestionFabricantes()
         {
             InitializeComponent();
@@ -24,7 +26,7 @@ namespace BimboPesaje.Formularios.Productos
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close(); 
+            this.Close();
 
         }
 
@@ -93,7 +95,7 @@ namespace BimboPesaje.Formularios.Productos
             cmbProveedor.SelectedIndex = -1;
             //cmbCategoria.SelectedIndex = -1;
         }
-       
+
 
         private void rbHabilitados_CheckedChanged(object sender, EventArgs e)
         {
@@ -121,6 +123,17 @@ namespace BimboPesaje.Formularios.Productos
             dgvFabricante.DataSource = filasFiltradas.Any()
                 ? filasFiltradas.CopyToDataTable()
                 : _tablaOriginal.Clone();
+        }
+
+        private void dgvFabricante_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvFabricante.SelectedRows.Count == 0) return;
+
+            IdFabricanteSeleccionado = Convert.ToInt32(dgvFabricante.SelectedRows[0].Cells["IdFabricante"].Value);
+            NombreFabricanteSeleccionado = dgvFabricante.SelectedRows[0].Cells["NombreFabricante"].Value?.ToString();
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

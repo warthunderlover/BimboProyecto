@@ -150,6 +150,7 @@
             dgvFabricante.Size = new Size(890, 399);
             dgvFabricante.TabIndex = 2;
             dgvFabricante.UseWaitCursor = true;
+            dgvFabricante.DoubleClick += dgvFabricante_DoubleClick;
             // 
             // IdFabricante
             // 
@@ -357,7 +358,7 @@
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(130, 56);
             btnNuevo.TabIndex = 0;
-            btnNuevo.Text = "Nuevo Producto";
+            btnNuevo.Text = "Nuevo Fabricante";
             btnNuevo.UseVisualStyleBackColor = false;
             // 
             // btnEditar
@@ -442,7 +443,7 @@
             txtBusqueda.ForeColor = Color.Black;
             txtBusqueda.Location = new Point(40, 0);
             txtBusqueda.Name = "txtBusqueda";
-            txtBusqueda.PlaceholderText = "Buscar producto...";
+            txtBusqueda.PlaceholderText = "Buscar Fabricante...";
             txtBusqueda.Size = new Size(473, 28);
             txtBusqueda.TabIndex = 3;
             // 

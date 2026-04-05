@@ -1,5 +1,6 @@
 using BimboPesaje.Formularios.Movimientos;
 using BimboPesaje.Formularios.Productos;
+using System.Threading.Tasks;
 
 namespace BimboPesaje
 {
@@ -273,8 +274,10 @@ namespace BimboPesaje
             ColapsarMenu();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void btnCategorias_Click(object sender, EventArgs e)
         {
+            await abrirFormHijo(new GestionCategorias());
+            lblHeader.Text = "Gestión de categorías";
             ColapsarMenu();
         }
     }

@@ -117,48 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;lblHeader.Name" xml:space="preserve">
-    <value>lblHeader</value>
-  </data>
-  <data name="&gt;&gt;lblHeader.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblHeader.Parent" xml:space="preserve">
-    <value>nombresFrms</value>
-  </data>
-  <data name="&gt;&gt;lblHeader.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="nombresFrms.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="nombresFrms.Location" type="System.Drawing.Point, System.Drawing">
-    <value>300, 0</value>
-  </data>
-  <data name="nombresFrms.Size" type="System.Drawing.Size, System.Drawing">
-    <value>932, 80</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="nombresFrms.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;nombresFrms.Name" xml:space="preserve">
-    <value>nombresFrms</value>
-  </data>
-  <data name="&gt;&gt;nombresFrms.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nombresFrms.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;nombresFrms.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="lblHeader.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblHeader.Font" type="System.Drawing.Font, System.Drawing">
     <value>Itim, 22pt</value>
   </data>
@@ -182,6 +145,31 @@
   </data>
   <data name="&gt;&gt;lblHeader.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="nombresFrms.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="nombresFrms.Location" type="System.Drawing.Point, System.Drawing">
+    <value>300, 0</value>
+  </data>
+  <data name="nombresFrms.Size" type="System.Drawing.Size, System.Drawing">
+    <value>932, 80</value>
+  </data>
+  <data name="nombresFrms.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;nombresFrms.Name" xml:space="preserve">
+    <value>nombresFrms</value>
+  </data>
+  <data name="&gt;&gt;nombresFrms.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nombresFrms.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;nombresFrms.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="btnSlide.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 12</value>
@@ -247,7 +235,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btnReporteria.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 842</value>
+    <value>0, 892</value>
   </data>
   <data name="btnReporteria.Size" type="System.Drawing.Size, System.Drawing">
     <value>279, 80</value>
@@ -270,6 +258,27 @@
   <data name="&gt;&gt;btnReporteria.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnMovimientosEntradas.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnMovimientosEntradas.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnMovimientosEntradas.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Itim, 12pt</value>
+  </data>
+  <data name="btnMovimientosEntradas.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="btnMovimientosEntradas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 50</value>
+  </data>
+  <data name="btnMovimientosEntradas.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnMovimientosEntradas.Text" xml:space="preserve">
+    <value>Movimientos y Entradas</value>
+  </data>
   <data name="&gt;&gt;btnMovimientosEntradas.Name" xml:space="preserve">
     <value>btnMovimientosEntradas</value>
   </data>
@@ -286,7 +295,7 @@
     <value>Top</value>
   </data>
   <data name="pnPesajes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 786</value>
+    <value>0, 836</value>
   </data>
   <data name="pnPesajes.Size" type="System.Drawing.Size, System.Drawing">
     <value>279, 56</value>
@@ -319,7 +328,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btnPesaje.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 706</value>
+    <value>0, 756</value>
   </data>
   <data name="btnPesaje.Size" type="System.Drawing.Size, System.Drawing">
     <value>279, 80</value>
@@ -342,29 +351,131 @@
   <data name="&gt;&gt;btnPesaje.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;button2.Name" xml:space="preserve">
-    <value>button2</value>
+  <data name="btnContactosFabricantes.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
   </data>
-  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+  <data name="btnContactosFabricantes.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnContactosFabricantes.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Itim, 12pt</value>
+  </data>
+  <data name="btnContactosFabricantes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnContactosFabricantes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 250</value>
+  </data>
+  <data name="btnContactosFabricantes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 50</value>
+  </data>
+  <data name="btnContactosFabricantes.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnContactosFabricantes.Text" xml:space="preserve">
+    <value>Contactos Fabricantes</value>
+  </data>
+  <data name="&gt;&gt;btnContactosFabricantes.Name" xml:space="preserve">
+    <value>btnContactosFabricantes</value>
+  </data>
+  <data name="&gt;&gt;btnContactosFabricantes.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnContactosFabricantes.Parent" xml:space="preserve">
     <value>pnProductos</value>
   </data>
-  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnContactosFabricantes.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
+  <data name="btnContactosProveedor.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
   </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+  <data name="btnContactosProveedor.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnContactosProveedor.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Itim, 12pt</value>
+  </data>
+  <data name="btnContactosProveedor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 200</value>
+  </data>
+  <data name="btnContactosProveedor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 50</value>
+  </data>
+  <data name="btnContactosProveedor.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btnContactosProveedor.Text" xml:space="preserve">
+    <value>Contactos Proveedor</value>
+  </data>
+  <data name="&gt;&gt;btnContactosProveedor.Name" xml:space="preserve">
+    <value>btnContactosProveedor</value>
+  </data>
+  <data name="&gt;&gt;btnContactosProveedor.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnContactosProveedor.Parent" xml:space="preserve">
     <value>pnProductos</value>
   </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnContactosProveedor.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="btnCategorias.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnCategorias.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnCategorias.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Itim, 12pt</value>
+  </data>
+  <data name="btnCategorias.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 150</value>
+  </data>
+  <data name="btnCategorias.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="btnCategorias.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 50</value>
+  </data>
+  <data name="btnCategorias.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnCategorias.Text" xml:space="preserve">
+    <value>Gestión Categorias</value>
+  </data>
+  <data name="&gt;&gt;btnCategorias.Name" xml:space="preserve">
+    <value>btnCategorias</value>
+  </data>
+  <data name="&gt;&gt;btnCategorias.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCategorias.Parent" xml:space="preserve">
+    <value>pnProductos</value>
+  </data>
+  <data name="&gt;&gt;btnCategorias.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnGestionFabricantes.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnGestionFabricantes.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnGestionFabricantes.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Itim, 12pt</value>
+  </data>
+  <data name="btnGestionFabricantes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 100</value>
+  </data>
+  <data name="btnGestionFabricantes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 50</value>
+  </data>
+  <data name="btnGestionFabricantes.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnGestionFabricantes.Text" xml:space="preserve">
+    <value>Gestion Fabricantes</value>
   </data>
   <data name="&gt;&gt;btnGestionFabricantes.Name" xml:space="preserve">
     <value>btnGestionFabricantes</value>
@@ -376,7 +487,28 @@
     <value>pnProductos</value>
   </data>
   <data name="&gt;&gt;btnGestionFabricantes.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
+  </data>
+  <data name="btnGestionProveedores.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnGestionProveedores.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnGestionProveedores.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Itim, 12pt</value>
+  </data>
+  <data name="btnGestionProveedores.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 50</value>
+  </data>
+  <data name="btnGestionProveedores.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 50</value>
+  </data>
+  <data name="btnGestionProveedores.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnGestionProveedores.Text" xml:space="preserve">
+    <value>Gestion Proveedores</value>
   </data>
   <data name="&gt;&gt;btnGestionProveedores.Name" xml:space="preserve">
     <value>btnGestionProveedores</value>
@@ -388,7 +520,28 @@
     <value>pnProductos</value>
   </data>
   <data name="&gt;&gt;btnGestionProveedores.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnGestionProductos.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnGestionProductos.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnGestionProductos.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Itim, 12pt</value>
+  </data>
+  <data name="btnGestionProductos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="btnGestionProductos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 50</value>
+  </data>
+  <data name="btnGestionProductos.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="btnGestionProductos.Text" xml:space="preserve">
+    <value>Gestion Productos</value>
   </data>
   <data name="&gt;&gt;btnGestionProductos.Name" xml:space="preserve">
     <value>btnGestionProductos</value>
@@ -400,7 +553,7 @@
     <value>pnProductos</value>
   </data>
   <data name="&gt;&gt;btnGestionProductos.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="pnProductos.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -409,7 +562,7 @@
     <value>0, 449</value>
   </data>
   <data name="pnProductos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 257</value>
+    <value>279, 307</value>
   </data>
   <data name="pnProductos.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -460,339 +613,6 @@
     <value>menuVertical</value>
   </data>
   <data name="&gt;&gt;btnProductos.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;btnBitacora.Name" xml:space="preserve">
-    <value>btnBitacora</value>
-  </data>
-  <data name="&gt;&gt;btnBitacora.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnBitacora.Parent" xml:space="preserve">
-    <value>pnUsers</value>
-  </data>
-  <data name="&gt;&gt;btnBitacora.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnGestionRoles.Name" xml:space="preserve">
-    <value>btnGestionRoles</value>
-  </data>
-  <data name="&gt;&gt;btnGestionRoles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnGestionRoles.Parent" xml:space="preserve">
-    <value>pnUsers</value>
-  </data>
-  <data name="&gt;&gt;btnGestionRoles.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnGestionUsuarios.Name" xml:space="preserve">
-    <value>btnGestionUsuarios</value>
-  </data>
-  <data name="&gt;&gt;btnGestionUsuarios.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnGestionUsuarios.Parent" xml:space="preserve">
-    <value>pnUsers</value>
-  </data>
-  <data name="&gt;&gt;btnGestionUsuarios.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btnGestionEmpleados.Name" xml:space="preserve">
-    <value>btnGestionEmpleados</value>
-  </data>
-  <data name="&gt;&gt;btnGestionEmpleados.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnGestionEmpleados.Parent" xml:space="preserve">
-    <value>pnUsers</value>
-  </data>
-  <data name="&gt;&gt;btnGestionEmpleados.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="pnUsers.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="pnUsers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 160</value>
-  </data>
-  <data name="pnUsers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 209</value>
-  </data>
-  <data name="pnUsers.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;pnUsers.Name" xml:space="preserve">
-    <value>pnUsers</value>
-  </data>
-  <data name="&gt;&gt;pnUsers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnUsers.Parent" xml:space="preserve">
-    <value>menuVertical</value>
-  </data>
-  <data name="&gt;&gt;pnUsers.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="btnUsuarios.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="btnUsuarios.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnUsuarios.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Itim, 12pt</value>
-  </data>
-  <data name="btnUsuarios.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btnUsuarios.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 80</value>
-  </data>
-  <data name="btnUsuarios.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 80</value>
-  </data>
-  <data name="btnUsuarios.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnUsuarios.Text" xml:space="preserve">
-    <value>Usuarios</value>
-  </data>
-  <data name="&gt;&gt;btnUsuarios.Name" xml:space="preserve">
-    <value>btnUsuarios</value>
-  </data>
-  <data name="&gt;&gt;btnUsuarios.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnUsuarios.Parent" xml:space="preserve">
-    <value>menuVertical</value>
-  </data>
-  <data name="&gt;&gt;btnUsuarios.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="menuVertical.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="menuVertical.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="menuVertical.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 853</value>
-  </data>
-  <data name="menuVertical.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;menuVertical.Name" xml:space="preserve">
-    <value>menuVertical</value>
-  </data>
-  <data name="&gt;&gt;menuVertical.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuVertical.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;menuVertical.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="btnMovimientosEntradas.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="btnMovimientosEntradas.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnMovimientosEntradas.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Itim, 12pt</value>
-  </data>
-  <data name="btnMovimientosEntradas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnMovimientosEntradas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 50</value>
-  </data>
-  <data name="btnMovimientosEntradas.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnMovimientosEntradas.Text" xml:space="preserve">
-    <value>Movimientos y Entradas</value>
-  </data>
-  <data name="&gt;&gt;btnMovimientosEntradas.Name" xml:space="preserve">
-    <value>btnMovimientosEntradas</value>
-  </data>
-  <data name="&gt;&gt;btnMovimientosEntradas.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnMovimientosEntradas.Parent" xml:space="preserve">
-    <value>pnPesajes</value>
-  </data>
-  <data name="&gt;&gt;btnMovimientosEntradas.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="button2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="button2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="button2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Itim, 12pt</value>
-  </data>
-  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 200</value>
-  </data>
-  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 50</value>
-  </data>
-  <data name="button2.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="button2.Text" xml:space="preserve">
-    <value>Contactos fabricante</value>
-  </data>
-  <data name="&gt;&gt;button2.Name" xml:space="preserve">
-    <value>button2</value>
-  </data>
-  <data name="&gt;&gt;button2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
-    <value>pnProductos</value>
-  </data>
-  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="button1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Itim, 12pt</value>
-  </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 150</value>
-  </data>
-  <data name="button1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 50</value>
-  </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Contactos proveedores</value>
-  </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
-  </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
-    <value>pnProductos</value>
-  </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnGestionFabricantes.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="btnGestionFabricantes.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnGestionFabricantes.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Itim, 12pt</value>
-  </data>
-  <data name="btnGestionFabricantes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 100</value>
-  </data>
-  <data name="btnGestionFabricantes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 50</value>
-  </data>
-  <data name="btnGestionFabricantes.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="btnGestionFabricantes.Text" xml:space="preserve">
-    <value>Gestion Fabricantes</value>
-  </data>
-  <data name="&gt;&gt;btnGestionFabricantes.Name" xml:space="preserve">
-    <value>btnGestionFabricantes</value>
-  </data>
-  <data name="&gt;&gt;btnGestionFabricantes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnGestionFabricantes.Parent" xml:space="preserve">
-    <value>pnProductos</value>
-  </data>
-  <data name="&gt;&gt;btnGestionFabricantes.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="btnGestionProveedores.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="btnGestionProveedores.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnGestionProveedores.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Itim, 12pt</value>
-  </data>
-  <data name="btnGestionProveedores.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 50</value>
-  </data>
-  <data name="btnGestionProveedores.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 50</value>
-  </data>
-  <data name="btnGestionProveedores.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="btnGestionProveedores.Text" xml:space="preserve">
-    <value>Gestion Proveedores</value>
-  </data>
-  <data name="&gt;&gt;btnGestionProveedores.Name" xml:space="preserve">
-    <value>btnGestionProveedores</value>
-  </data>
-  <data name="&gt;&gt;btnGestionProveedores.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnGestionProveedores.Parent" xml:space="preserve">
-    <value>pnProductos</value>
-  </data>
-  <data name="&gt;&gt;btnGestionProveedores.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="btnGestionProductos.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="btnGestionProductos.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnGestionProductos.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Itim, 12pt</value>
-  </data>
-  <data name="btnGestionProductos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnGestionProductos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 50</value>
-  </data>
-  <data name="btnGestionProductos.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnGestionProductos.Text" xml:space="preserve">
-    <value>Gestion Productos</value>
-  </data>
-  <data name="&gt;&gt;btnGestionProductos.Name" xml:space="preserve">
-    <value>btnGestionProductos</value>
-  </data>
-  <data name="&gt;&gt;btnGestionProductos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnGestionProductos.Parent" xml:space="preserve">
-    <value>pnProductos</value>
-  </data>
-  <data name="&gt;&gt;btnGestionProductos.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="btnBitacora.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -927,6 +747,108 @@
   <data name="&gt;&gt;btnGestionEmpleados.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="pnUsers.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pnUsers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 160</value>
+  </data>
+  <data name="pnUsers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 209</value>
+  </data>
+  <data name="pnUsers.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;pnUsers.Name" xml:space="preserve">
+    <value>pnUsers</value>
+  </data>
+  <data name="&gt;&gt;pnUsers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnUsers.Parent" xml:space="preserve">
+    <value>menuVertical</value>
+  </data>
+  <data name="&gt;&gt;pnUsers.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnUsuarios.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnUsuarios.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnUsuarios.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Itim, 12pt</value>
+  </data>
+  <data name="btnUsuarios.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnUsuarios.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 80</value>
+  </data>
+  <data name="btnUsuarios.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 80</value>
+  </data>
+  <data name="btnUsuarios.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnUsuarios.Text" xml:space="preserve">
+    <value>Usuarios</value>
+  </data>
+  <data name="&gt;&gt;btnUsuarios.Name" xml:space="preserve">
+    <value>btnUsuarios</value>
+  </data>
+  <data name="&gt;&gt;btnUsuarios.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnUsuarios.Parent" xml:space="preserve">
+    <value>menuVertical</value>
+  </data>
+  <data name="&gt;&gt;btnUsuarios.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="menuVertical.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="menuVertical.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuVertical.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 853</value>
+  </data>
+  <data name="menuVertical.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;menuVertical.Name" xml:space="preserve">
+    <value>menuVertical</value>
+  </data>
+  <data name="&gt;&gt;menuVertical.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuVertical.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuVertical.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Itim, 22pt</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 19</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 44</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
   </data>
@@ -1012,36 +934,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnContenedor.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Itim, 22pt</value>
-  </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 19</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 44</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

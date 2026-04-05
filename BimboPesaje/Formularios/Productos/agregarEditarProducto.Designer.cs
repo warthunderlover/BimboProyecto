@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             pnFill = new Panel();
+            btnCat = new Button();
+            btnFab = new Button();
+            btnPre = new Button();
             cmbPaisImportado = new ComboBox();
             cmbTara = new ComboBox();
             cmbUnidad = new ComboBox();
@@ -63,6 +66,9 @@
             // pnFill
             // 
             pnFill.BackColor = Color.FromArgb(79, 125, 209);
+            pnFill.Controls.Add(btnCat);
+            pnFill.Controls.Add(btnFab);
+            pnFill.Controls.Add(btnPre);
             pnFill.Controls.Add(cmbPaisImportado);
             pnFill.Controls.Add(cmbTara);
             pnFill.Controls.Add(cmbUnidad);
@@ -94,6 +100,47 @@
             pnFill.Name = "pnFill";
             pnFill.Size = new Size(687, 730);
             pnFill.TabIndex = 0;
+            // 
+            // btnCat
+            // 
+            btnCat.BackColor = Color.FromArgb(31, 60, 136);
+            btnCat.FlatAppearance.BorderSize = 0;
+            btnCat.FlatStyle = FlatStyle.Flat;
+            btnCat.ForeColor = SystemColors.ControlLightLight;
+            btnCat.Image = Properties.Resources.buscar_24;
+            btnCat.Location = new Point(507, 353);
+            btnCat.Name = "btnCat";
+            btnCat.Size = new Size(30, 30);
+            btnCat.TabIndex = 33;
+            btnCat.UseVisualStyleBackColor = false;
+            // 
+            // btnFab
+            // 
+            btnFab.BackColor = Color.FromArgb(31, 60, 136);
+            btnFab.FlatAppearance.BorderSize = 0;
+            btnFab.FlatStyle = FlatStyle.Flat;
+            btnFab.ForeColor = SystemColors.ControlLightLight;
+            btnFab.Image = Properties.Resources.buscar_24;
+            btnFab.Location = new Point(507, 305);
+            btnFab.Name = "btnFab";
+            btnFab.Size = new Size(30, 30);
+            btnFab.TabIndex = 32;
+            btnFab.UseVisualStyleBackColor = false;
+            btnFab.Click += btnFab_Click;
+            // 
+            // btnPre
+            // 
+            btnPre.BackColor = Color.FromArgb(31, 60, 136);
+            btnPre.FlatAppearance.BorderSize = 0;
+            btnPre.FlatStyle = FlatStyle.Flat;
+            btnPre.ForeColor = SystemColors.ControlLightLight;
+            btnPre.Image = Properties.Resources.buscar_24;
+            btnPre.Location = new Point(507, 252);
+            btnPre.Name = "btnPre";
+            btnPre.Size = new Size(30, 30);
+            btnPre.TabIndex = 31;
+            btnPre.UseVisualStyleBackColor = false;
+            btnPre.Click += btnPre_Click;
             // 
             // cmbPaisImportado
             // 
@@ -151,7 +198,7 @@
             btnGuardar.TabIndex = 26;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
-            btnGuardar.Click += this.btnGuardar_Click;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // rbInactivo
             // 
@@ -236,7 +283,7 @@
             txtPeso.Location = new Point(252, 461);
             txtPeso.Multiline = true;
             txtPeso.Name = "txtPeso";
-            txtPeso.Size = new Size(91, 32);
+            txtPeso.Size = new Size(91, 25);
             txtPeso.TabIndex = 15;
             // 
             // txtContenido
@@ -248,43 +295,46 @@
             txtContenido.Location = new Point(252, 412);
             txtContenido.Multiline = true;
             txtContenido.Name = "txtContenido";
-            txtContenido.Size = new Size(91, 32);
+            txtContenido.Size = new Size(91, 25);
             txtContenido.TabIndex = 13;
             // 
             // txtCategoria
             // 
             txtCategoria.BackColor = Color.White;
             txtCategoria.BorderStyle = BorderStyle.None;
+            txtCategoria.Enabled = false;
             txtCategoria.Font = new Font("Microsoft Sans Serif", 12F);
             txtCategoria.ForeColor = Color.Black;
             txtCategoria.Location = new Point(252, 358);
             txtCategoria.Multiline = true;
             txtCategoria.Name = "txtCategoria";
-            txtCategoria.Size = new Size(285, 32);
+            txtCategoria.Size = new Size(242, 25);
             txtCategoria.TabIndex = 12;
             // 
             // txtFabricante
             // 
             txtFabricante.BackColor = Color.White;
             txtFabricante.BorderStyle = BorderStyle.None;
+            txtFabricante.Enabled = false;
             txtFabricante.Font = new Font("Microsoft Sans Serif", 12F);
             txtFabricante.ForeColor = Color.Black;
-            txtFabricante.Location = new Point(252, 303);
+            txtFabricante.Location = new Point(252, 310);
             txtFabricante.Multiline = true;
             txtFabricante.Name = "txtFabricante";
-            txtFabricante.Size = new Size(285, 32);
+            txtFabricante.Size = new Size(242, 25);
             txtFabricante.TabIndex = 11;
             // 
             // txtPresentacion
             // 
             txtPresentacion.BackColor = Color.White;
             txtPresentacion.BorderStyle = BorderStyle.None;
+            txtPresentacion.Enabled = false;
             txtPresentacion.Font = new Font("Microsoft Sans Serif", 12F);
             txtPresentacion.ForeColor = Color.Black;
-            txtPresentacion.Location = new Point(252, 250);
+            txtPresentacion.Location = new Point(252, 257);
             txtPresentacion.Multiline = true;
             txtPresentacion.Name = "txtPresentacion";
-            txtPresentacion.Size = new Size(285, 32);
+            txtPresentacion.Size = new Size(242, 25);
             txtPresentacion.TabIndex = 10;
             // 
             // txtNombreProducto
@@ -293,10 +343,10 @@
             txtNombreProducto.BorderStyle = BorderStyle.None;
             txtNombreProducto.Font = new Font("Microsoft Sans Serif", 12F);
             txtNombreProducto.ForeColor = Color.Black;
-            txtNombreProducto.Location = new Point(252, 196);
+            txtNombreProducto.Location = new Point(252, 203);
             txtNombreProducto.Multiline = true;
             txtNombreProducto.Name = "txtNombreProducto";
-            txtNombreProducto.Size = new Size(285, 32);
+            txtNombreProducto.Size = new Size(285, 25);
             txtNombreProducto.TabIndex = 9;
             // 
             // txtCodigoInterno
@@ -305,10 +355,10 @@
             txtCodigoInterno.BorderStyle = BorderStyle.None;
             txtCodigoInterno.Font = new Font("Microsoft Sans Serif", 12F);
             txtCodigoInterno.ForeColor = Color.Black;
-            txtCodigoInterno.Location = new Point(252, 146);
+            txtCodigoInterno.Location = new Point(252, 153);
             txtCodigoInterno.Multiline = true;
             txtCodigoInterno.Name = "txtCodigoInterno";
-            txtCodigoInterno.Size = new Size(285, 32);
+            txtCodigoInterno.Size = new Size(285, 25);
             txtCodigoInterno.TabIndex = 8;
             // 
             // label7
@@ -441,5 +491,8 @@
         private ComboBox cmbTara;
         private ComboBox cmbUnidad;
         private ComboBox cmbPaisImportado;
+        private Button btnPre;
+        private Button btnCat;
+        private Button btnFab;
     }
 }
